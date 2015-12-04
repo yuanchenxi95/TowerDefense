@@ -45,8 +45,8 @@
 		6F6387051C1118E800A9CD18 /* Controller.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Controller.cpp; sourceTree = "<group>"; };
 		6F6387061C1118E800A9CD18 /* Controller.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Controller.hpp; sourceTree = "<group>"; };
 		6F6387081C11190800A9CD18 /* IController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IController.cpp; sourceTree = "<group>"; };
-		6F63870D1C111B2700A9CD18 /* ITowerDefenseModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ITowerDefenseModel.cpp; path = ../ITowerDefenseModel.cpp; sourceTree = "<group>"; };
-		6F63870E1C111B2800A9CD18 /* ITowerDefenseModel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ITowerDefenseModel.hpp; path = ../ITowerDefenseModel.hpp; sourceTree = "<group>"; };
+		6F63870D1C111B2700A9CD18 /* ITowerDefenseModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ITowerDefenseModel.cpp; sourceTree = "<group>"; };
+		6F63870E1C111B2800A9CD18 /* ITowerDefenseModel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ITowerDefenseModel.hpp; sourceTree = "<group>"; };
 		6F6387101C111D2E00A9CD18 /* GophersTowerDefenseModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GophersTowerDefenseModel.cpp; sourceTree = "<group>"; };
 		6F6387111C111D2E00A9CD18 /* GophersTowerDefenseModel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GophersTowerDefenseModel.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */

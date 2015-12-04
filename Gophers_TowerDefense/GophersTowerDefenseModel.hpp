@@ -4,8 +4,6 @@
 #include <stdio.h>
 #include "ITowerDefenseModel.hpp"
 
-
-
 /*
  * Gophers tower defence model class, a subclass of the ITowerDefenseModel
  *
