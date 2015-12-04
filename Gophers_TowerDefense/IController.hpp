@@ -12,8 +12,10 @@ public:
   
   virtual void handleKey(SDL_Keycode keycode) = 0;
   
-protected:
-  // TODO put model here
+  virtual void startLoop() = 0;
+  
+private:
+  IController& operator=(const IController & other);
 };
 
 #endif /* IController_hpp */

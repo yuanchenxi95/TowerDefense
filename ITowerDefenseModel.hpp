@@ -1,6 +1,16 @@
 #ifndef ITowerDefenseModel_hpp
 #define ITowerDefenseModel_hpp
 
+#include "ITile.hpp"
+
+// gamestate constants
+enum GameState {
+  QUIT,
+  PLAYING,
+  GAMEMOVER,
+  MENU
+};
+
 /*
  * Interface for a tower defense model
  * 
@@ -14,10 +24,22 @@ public:
   virtual ~ITowerDefenseModel() = 0;
   
   // returns the board tiles of this model
-  // TODO
+  virtual ITile** getBoardTiles() = 0;
+  
+  // returns the current GameState of the model
+  virtual GameState getGameState() = 0;
+  
+  // sets the current GameState to the given state
+  virtual void setGameState(GameState newState) = 0;
+  
+  // test toggle show background, (testing only temporary)
+  virtual void toggleShowBackground() = 0;
+  
+  // test return show background, (testing only temporary)
+  virtual bool isShowingBackground() const = 0;
   
 private:
-  
+  ITowerDefenseModel& operator=(const ITowerDefenseModel & other);
 };
 
 #endif /* ITowerDefenseModel_hpp */
