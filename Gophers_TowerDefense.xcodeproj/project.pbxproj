@@ -1,0 +1,283 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6F3E5B581C1108C00058D38C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F3E5B571C1108C00058D38C /* main.cpp */; };
+		6F3E5B5F1C1108F30058D38C /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F3E5B5E1C1108F30058D38C /* SDL2.framework */; };
+		6F6387071C1118E800A9CD18 /* Controller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F6387051C1118E800A9CD18 /* Controller.cpp */; };
+		6F6387091C11190800A9CD18 /* IController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F6387081C11190800A9CD18 /* IController.cpp */; };
+		6F63870F1C111B2800A9CD18 /* ITowerDefenseModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F63870D1C111B2700A9CD18 /* ITowerDefenseModel.cpp */; };
+		6F6387121C111D2E00A9CD18 /* GophersTowerDefenseModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F6387101C111D2E00A9CD18 /* GophersTowerDefenseModel.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6F3E5B521C1108C00058D38C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		6F3E5B541C1108C00058D38C /* Gophers_TowerDefense */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Gophers_TowerDefense; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F3E5B571C1108C00058D38C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		6F3E5B5E1C1108F30058D38C /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../../../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
+		6F3E5B601C1109DC0058D38C /* background.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = background.bmp; sourceTree = "<group>"; };
+		6F6387001C11150B00A9CD18 /* IController.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IController.hpp; sourceTree = "<group>"; };
+		6F6387051C1118E800A9CD18 /* Controller.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Controller.cpp; sourceTree = "<group>"; };
+		6F6387061C1118E800A9CD18 /* Controller.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Controller.hpp; sourceTree = "<group>"; };
+		6F6387081C11190800A9CD18 /* IController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IController.cpp; sourceTree = "<group>"; };
+		6F63870D1C111B2700A9CD18 /* ITowerDefenseModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ITowerDefenseModel.cpp; path = ../ITowerDefenseModel.cpp; sourceTree = "<group>"; };
+		6F63870E1C111B2800A9CD18 /* ITowerDefenseModel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ITowerDefenseModel.hpp; path = ../ITowerDefenseModel.hpp; sourceTree = "<group>"; };
+		6F6387101C111D2E00A9CD18 /* GophersTowerDefenseModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GophersTowerDefenseModel.cpp; sourceTree = "<group>"; };
+		6F6387111C111D2E00A9CD18 /* GophersTowerDefenseModel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GophersTowerDefenseModel.hpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6F3E5B511C1108C00058D38C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F3E5B5F1C1108F30058D38C /* SDL2.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6F3E5B4B1C1108C00058D38C = {
+			isa = PBXGroup;
+			children = (
+				6F3E5B5E1C1108F30058D38C /* SDL2.framework */,
+				6F3E5B561C1108C00058D38C /* Gophers_TowerDefense */,
+				6F3E5B551C1108C00058D38C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6F3E5B551C1108C00058D38C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6F3E5B541C1108C00058D38C /* Gophers_TowerDefense */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6F3E5B561C1108C00058D38C /* Gophers_TowerDefense */ = {
+			isa = PBXGroup;
+			children = (
+				6F3E5B601C1109DC0058D38C /* background.bmp */,
+				6F3E5B571C1108C00058D38C /* main.cpp */,
+				6F63870D1C111B2700A9CD18 /* ITowerDefenseModel.cpp */,
+				6F63870E1C111B2800A9CD18 /* ITowerDefenseModel.hpp */,
+				6F6387101C111D2E00A9CD18 /* GophersTowerDefenseModel.cpp */,
+				6F6387111C111D2E00A9CD18 /* GophersTowerDefenseModel.hpp */,
+				6F6387081C11190800A9CD18 /* IController.cpp */,
+				6F6387001C11150B00A9CD18 /* IController.hpp */,
+				6F6387051C1118E800A9CD18 /* Controller.cpp */,
+				6F6387061C1118E800A9CD18 /* Controller.hpp */,
+			);
+			path = Gophers_TowerDefense;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6F3E5B531C1108C00058D38C /* Gophers_TowerDefense */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6F3E5B5B1C1108C00058D38C /* Build configuration list for PBXNativeTarget "Gophers_TowerDefense" */;
+			buildPhases = (
+				6F3E5B501C1108C00058D38C /* Sources */,
+				6F3E5B511C1108C00058D38C /* Frameworks */,
+				6F3E5B521C1108C00058D38C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Gophers_TowerDefense;
+			productName = Gophers_TowerDefense;
+			productReference = 6F3E5B541C1108C00058D38C /* Gophers_TowerDefense */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6F3E5B4C1C1108C00058D38C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = RB;
+				TargetAttributes = {
+					6F3E5B531C1108C00058D38C = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 6F3E5B4F1C1108C00058D38C /* Build configuration list for PBXProject "Gophers_TowerDefense" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6F3E5B4B1C1108C00058D38C;
+			productRefGroup = 6F3E5B551C1108C00058D38C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6F3E5B531C1108C00058D38C /* Gophers_TowerDefense */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6F3E5B501C1108C00058D38C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F3E5B581C1108C00058D38C /* main.cpp in Sources */,
+				6F63870F1C111B2800A9CD18 /* ITowerDefenseModel.cpp in Sources */,
+				6F6387071C1118E800A9CD18 /* Controller.cpp in Sources */,
+				6F6387121C111D2E00A9CD18 /* GophersTowerDefenseModel.cpp in Sources */,
+				6F6387091C11190800A9CD18 /* IController.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		6F3E5B591C1108C00058D38C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		6F3E5B5A1C1108C00058D38C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		6F3E5B5C1C1108C00058D38C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6F3E5B5D1C1108C00058D38C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6F3E5B4F1C1108C00058D38C /* Build configuration list for PBXProject "Gophers_TowerDefense" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6F3E5B591C1108C00058D38C /* Debug */,
+				6F3E5B5A1C1108C00058D38C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6F3E5B5B1C1108C00058D38C /* Build configuration list for PBXNativeTarget "Gophers_TowerDefense" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6F3E5B5C1C1108C00058D38C /* Debug */,
+				6F3E5B5D1C1108C00058D38C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6F3E5B4C1C1108C00058D38C /* Project object */;
+}
