@@ -13,7 +13,7 @@ GophersTowerDefenseModel::~GophersTowerDefenseModel() {
 
 // returns the board tiles of this model
 ITile** GophersTowerDefenseModel::getBoardTiles() {
-  // TODO this is a dummy value
+  // TODO this is a dummy valu
   return new ITile*[10];
 }
 
