@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include "ITile.hpp"
+#include "ITower.hpp"
 
 class TowerTile :public ITile {
 public:
@@ -29,11 +30,26 @@ public:
     // get the position of this tile
     SDL_Point getPos();
     
+    // is this tile occupied by a tower
+    bool isOccupied();
+    
+    // build the tower
+    void buildTower(ITower & t);
+    
     
 private:
     bool towerTile;
     bool enemyTile;
+    
+    // is this tile occupied by a tower
+    bool occupied;
+    
+    // the position of this tile
     SDL_Point pos;
+    
+    // the Tower built on this tile
+    // point to Null if ocupied is off
+    ITower * tower;
 };
 
 

@@ -33,6 +33,8 @@ public:
 private:
     bool towerTile;
     bool enemyTile;
+    
+    // the position of this tile
     SDL_Point pos;
 };
 
