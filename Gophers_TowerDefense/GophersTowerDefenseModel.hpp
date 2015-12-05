@@ -16,7 +16,7 @@ public:
   // destructor
   virtual ~GophersTowerDefenseModel();
   
-  // returns game state
+  // returns game stat
   virtual GameState getGameState();
   
   // sets the current GameState to the given state
