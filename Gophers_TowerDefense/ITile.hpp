@@ -8,13 +8,37 @@
  * All member functions must be overridden by subclasses.
  */
 
+#include "SDL2/SDL.h"
+
 class ITile {
 public:
   // destructor
   virtual ~ITile() = 0;
-  
+
+    
+    // static ITile* create(SDL_Point p);
+    
+    // whether this tile is a TowerTile
+    virtual bool isTowerTile() = 0;
+    
+    // whether this tile is an enmemy path
+    virtual bool isEnemyTile() = 0;
+    
+    // get the position of this tile
+    virtual SDL_Point getPos() = 0;
+    
+    
+    
+    
+    
+    
+    
+    
 private:
   ITile& operator=(const ITile & other);
+    
+
+    
 };
 
 #endif /* ITile_hpp */

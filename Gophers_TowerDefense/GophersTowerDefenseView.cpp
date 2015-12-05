@@ -35,6 +35,8 @@ bool GophersTowerDefenseView::loadMedia() {
   bool hasFailed = false;
   
   backgroundSurface = loadBMPSurface("background.bmp");
+    
+    // TO-DO
   
   return !hasFailed;
 }
