@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		127700D81C1382440099A534 /* GunTower.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 127700D61C1382440099A534 /* GunTower.cpp */; };
 		12ACCB561C128903002700C3 /* EnemyTile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12ACCB541C128903002700C3 /* EnemyTile.cpp */; };
 		12ACCB591C128C48002700C3 /* TowerTile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12ACCB571C128C48002700C3 /* TowerTile.cpp */; };
 		12ACCB5D1C128E4F002700C3 /* ITower.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12ACCB5B1C128E4F002700C3 /* ITower.cpp */; };
@@ -38,6 +39,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		127700D61C1382440099A534 /* GunTower.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GunTower.cpp; sourceTree = "<group>"; };
+		127700D71C1382440099A534 /* GunTower.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GunTower.hpp; sourceTree = "<group>"; };
 		12ACCB541C128903002700C3 /* EnemyTile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EnemyTile.cpp; sourceTree = "<group>"; };
 		12ACCB551C128903002700C3 /* EnemyTile.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = EnemyTile.hpp; sourceTree = "<group>"; };
 		12ACCB571C128C48002700C3 /* TowerTile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TowerTile.cpp; sourceTree = "<group>"; };
@@ -102,6 +105,8 @@
 			children = (
 				12ACCB5B1C128E4F002700C3 /* ITower.cpp */,
 				12ACCB5C1C128E4F002700C3 /* ITower.hpp */,
+				127700D61C1382440099A534 /* GunTower.cpp */,
+				127700D71C1382440099A534 /* GunTower.hpp */,
 			);
 			name = TowerData;
 			sourceTree = "<group>";
@@ -248,6 +253,7 @@
 				12DB9DE21C136B47001CDD4F /* Object.cpp in Sources */,
 				6F4574E81C112764008E3164 /* GophersTowerDefenseView.cpp in Sources */,
 				12ACCB5D1C128E4F002700C3 /* ITower.cpp in Sources */,
+				127700D81C1382440099A534 /* GunTower.cpp in Sources */,
 				6F63870F1C111B2800A9CD18 /* ITowerDefenseModel.cpp in Sources */,
 				12ACCB611C12CAEF002700C3 /* IEnemy.cpp in Sources */,
 				6F4574E51C1126C1008E3164 /* ITowerDefenseView.cpp in Sources */,

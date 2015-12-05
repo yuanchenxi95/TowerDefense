@@ -37,7 +37,6 @@ SDL_Rect Object::getRect(SDL_Texture * texture, int maxDimension, SDL_Point p) {
         
         // scaling factor to reduce height by
         double factor = textureHeight / maxDimension;
-        
         // height cannot exceed max dimension
         textureHeight = maxDimension;
         
