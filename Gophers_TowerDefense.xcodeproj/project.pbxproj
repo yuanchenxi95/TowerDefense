@@ -10,6 +10,7 @@
 		12ACCB561C128903002700C3 /* EnemyTile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12ACCB541C128903002700C3 /* EnemyTile.cpp */; };
 		12ACCB591C128C48002700C3 /* TowerTile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12ACCB571C128C48002700C3 /* TowerTile.cpp */; };
 		12ACCB5D1C128E4F002700C3 /* ITower.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12ACCB5B1C128E4F002700C3 /* ITower.cpp */; };
+		12ACCB611C12CAEF002700C3 /* IEnemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12ACCB5F1C12CAEF002700C3 /* IEnemy.cpp */; };
 		6F3E5B581C1108C00058D38C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F3E5B571C1108C00058D38C /* main.cpp */; };
 		6F3E5B5F1C1108F30058D38C /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F3E5B5E1C1108F30058D38C /* SDL2.framework */; };
 		6F4574E01C112463008E3164 /* ITile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F4574DE1C112463008E3164 /* ITile.cpp */; };
@@ -40,6 +41,8 @@
 		12ACCB581C128C48002700C3 /* TowerTile.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TowerTile.hpp; sourceTree = "<group>"; };
 		12ACCB5B1C128E4F002700C3 /* ITower.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ITower.cpp; sourceTree = "<group>"; };
 		12ACCB5C1C128E4F002700C3 /* ITower.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ITower.hpp; sourceTree = "<group>"; };
+		12ACCB5F1C12CAEF002700C3 /* IEnemy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IEnemy.cpp; sourceTree = "<group>"; };
+		12ACCB601C12CAEF002700C3 /* IEnemy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IEnemy.hpp; sourceTree = "<group>"; };
 		6F3E5B541C1108C00058D38C /* Gophers_TowerDefense */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Gophers_TowerDefense; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F3E5B571C1108C00058D38C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		6F3E5B5E1C1108F30058D38C /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../../../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
@@ -94,6 +97,15 @@
 			name = TowerData;
 			sourceTree = "<group>";
 		};
+		12ACCB5E1C12CAE1002700C3 /* EnemyData */ = {
+			isa = PBXGroup;
+			children = (
+				12ACCB5F1C12CAEF002700C3 /* IEnemy.cpp */,
+				12ACCB601C12CAEF002700C3 /* IEnemy.hpp */,
+			);
+			name = EnemyData;
+			sourceTree = "<group>";
+		};
 		6F3E5B4B1C1108C00058D38C = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +138,7 @@
 		6F4574E11C112549008E3164 /* TD_Model */ = {
 			isa = PBXGroup;
 			children = (
+				12ACCB5E1C12CAE1002700C3 /* EnemyData */,
 				12ACCB5A1C128E40002700C3 /* TowerData */,
 				12ACCB531C1288E5002700C3 /* TileData */,
 				6F63870D1C111B2700A9CD18 /* ITowerDefenseModel.cpp */,
@@ -220,6 +233,7 @@
 				6F4574E81C112764008E3164 /* GophersTowerDefenseView.cpp in Sources */,
 				12ACCB5D1C128E4F002700C3 /* ITower.cpp in Sources */,
 				6F63870F1C111B2800A9CD18 /* ITowerDefenseModel.cpp in Sources */,
+				12ACCB611C12CAEF002700C3 /* IEnemy.cpp in Sources */,
 				6F4574E51C1126C1008E3164 /* ITowerDefenseView.cpp in Sources */,
 				12ACCB561C128903002700C3 /* EnemyTile.cpp in Sources */,
 				6F6387071C1118E800A9CD18 /* Controller.cpp in Sources */,

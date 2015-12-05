@@ -18,6 +18,11 @@ EnemyTile::EnemyTile(SDL_Point p) {
     enemyTile = true;
 }
 
+EnemyTile::~EnemyTile() {
+    
+    // TO-DO: delete SDL_Point
+}
+
 
 // whether this tile is a TowerTile
 bool EnemyTile::isTowerTile() {

@@ -30,12 +30,8 @@ public:
     SDL_Point getPos();
     
     
-private:
-    bool towerTile;
-    bool enemyTile;
-    
-    // the position of this tile
-    SDL_Point pos;
+protected:
+
 };
 
 

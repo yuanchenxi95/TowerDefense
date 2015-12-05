@@ -18,6 +18,10 @@ TowerTile::TowerTile(SDL_Point p) {
     
 }
 
+TowerTile::~TowerTile() {
+    // TO-DO Delete SDL_Point
+    delete tower;
+}
 
 // whether this tile is a TowerTile
 bool TowerTile::isTowerTile() {

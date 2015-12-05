@@ -37,15 +37,11 @@ public:
     void buildTower(ITower & t);
     
     
-private:
-    bool towerTile;
-    bool enemyTile;
+protected:
     
     // is this tile occupied by a tower
     bool occupied;
-    
-    // the position of this tile
-    SDL_Point pos;
+
     
     // the Tower built on this tile
     // point to Null if ocupied is off
