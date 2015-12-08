@@ -18,6 +18,8 @@ IEnemy::IEnemy(SDL_Point p, SDL_Point rc)  {
     counter = new Counter(&moveInterval);
     
     freezeCounter = new Counter(new int(0));
+    
+    onBoard = false;
 }
 
 // delete allocated memory
@@ -40,6 +42,16 @@ void IEnemy::move(SDL_Point p) {
     
 }
 
+// set the rowColumn to the given point
+void setRowColumn(SDL_Point *) {
+    
+}
+
+
+// set the rowColumn to the given point
+void setPosition(SDL_Point *) {
+    
+}
 
 // get the position of enemy
 SDL_Point IEnemy::getPos() {
@@ -77,6 +89,15 @@ int IEnemy::getMoveInterval() {
     }
 }
 
+// is this enemy on board
+bool IEnemy::isOnBoard() {
+    return onBoard;
+}
+
+// set the onBoard to the given boolean
+void IEnemy::setOnBoard(bool b) {
+    onBoard = b;
+}
 
 // is the enemy good to move
 bool IEnemy::goodToMove() {

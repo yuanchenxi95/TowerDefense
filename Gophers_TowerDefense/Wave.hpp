@@ -13,21 +13,36 @@
 #include "IEnemy.hpp"
 #include "EnemyTile.hpp"
 #include <vector>
+#include "EnemyPath.hpp"
+#include "Counter.hpp"
 
 using namespace std;
 
 
 class Wave {
 public:
-    Wave(map<EnemyTile *, EnemyTile *> *, vector<IEnemy *> *);
+    Wave(EnemyPath *, vector<IEnemy *> *);
     ~Wave();
+    
+    // tick all the enemies' counters and spawnCounter
+    void tick();
+    
+    // return ture if there is an enemy to be spawned
+    bool anyEnemyToSpawn();
+    
+    // move and spawn the enemy
+    void move();
     
 protected:
     
     
 private:
-    map<EnemyTile, EnemyTile> * path;
-    vector<IEnemy *> * enemies;
+    
+    Counter * spawnCounter;
+    
+    EnemyPath * ep;
+    
+    vector<IEnemy*> * loe;
 };
 
 #endif /* Wave_hpp */

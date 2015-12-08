@@ -23,13 +23,20 @@ public:
     ~IEnemy(); // deconstructor
     
     void move(SDL_Point); // move the enemy to the given position
+    void setRowColumn(SDL_Point *); // set the rowColumn to the given point
+    void setPosition(SDL_Point *); // set the pos to the given position
+    
     SDL_Point getPos(); // return the position of the enemy
     SDL_Point getRowColumn(); // return the row and column of this
+    
     void takeDamage(int); // take x amount of damage from an ITower
     bool isDead(); // return true if health is <= 0, false otherwise
     
     void setMoveIntervalScale(int, int); // set the move Interval for how many ticks
     int getMoveInterval(); // get the move Interval
+    
+    bool isOnBoard(); // is this enemy on board
+    void setOnBoard(bool); // set the onBoard to the given boolean
     
 protected:
     SDL_Point pos; // the position of the enemy
@@ -55,6 +62,8 @@ private:
     
     // the scale of the move interval
     int moveIntervalScale;
+    
+    bool onBoard;
 };
 
 #endif /* IEnemy_hpp */

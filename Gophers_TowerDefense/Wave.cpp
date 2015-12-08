@@ -7,3 +7,25 @@
 //
 
 #include "Wave.hpp"
+
+Wave::Wave(EnemyPath * tep, vector<IEnemy *> * tloe) {
+    ep = tep;
+    loe = tloe;
+    
+    //spawn every minion in 2000 milliseconds
+    spawnCounter = new Counter(new int(2000));
+    
+}
+
+Wave::~Wave() {
+    delete spawnCounter;
+    spawnCounter = NULL;
+    
+}
+
+
+
+
+
+
+
