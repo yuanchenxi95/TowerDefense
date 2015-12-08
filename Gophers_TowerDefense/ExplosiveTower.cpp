@@ -10,31 +10,26 @@
 
 
 
-ExplosiveTower::ExplosiveTower(vector<IEnemy *> * enemiesTemp,
-                               vector<ITower *> * towersTemp,
-                               SDL_Point p) : ITower(enemiesTemp, towersTemp, p) {
+ExplosiveTower::ExplosiveTower(SDL_Point p) : ITower(p) {
     // initilizes fields
-    // deal 100 damage per attack, range is 100, delay is 3.
+    // deal 100 damage per attack, range is 100, delay is 3000 milliseconds.
     
     damage = 20;
-    attackDelay = 3;
+    attackDelay = 1000;
     range = 50;
     cost = 100;
     
+
 }
 
-void ExplosiveTower::attackHelp() {
+void ExplosiveTower::attackHelp(vector<IEnemy*> * enemies) {
     for (int i = 0; i < enemies->size(); i ++) {
         IEnemy * ene = (*enemies)[i];
         
-        if (inRange(ene)) {
-            
-            ene->takeDamage(damage);
-                        
-            return;
-        }
+        ene->takeDamage(damage);
+        
     }
     
-
+    
     
 }

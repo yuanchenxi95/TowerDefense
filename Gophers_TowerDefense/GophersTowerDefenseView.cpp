@@ -21,9 +21,9 @@ GophersTowerDefenseView::~GophersTowerDefenseView() {
 
 void GophersTowerDefenseView::render() {
   SDL_FillRect(windowSurface, 0, SDL_MapRGB(windowSurface->format, 0, 0, 0));
-  if (tdModel->isShowingBackground()) {
-    SDL_BlitSurface(backgroundSurface, NULL, windowSurface, NULL);
-  }
+//  if (tdModel->isShowingBackground()) {
+//    SDL_BlitSurface(backgroundSurface, NULL, windowSurface, NULL);
+//  }
   SDL_UpdateWindowSurface(mainFrame);
 }
 

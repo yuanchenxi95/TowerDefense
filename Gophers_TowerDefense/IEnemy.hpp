@@ -12,36 +12,49 @@
 #include <stdio.h>
 #include <SDL2/SDL.h>
 #include <string>
-#include <sys/time.h>
+#include <iostream>
+#include <map>
+#include "counter.hpp"
 
 class IEnemy {
 public:
     
-    IEnemy(); // constructor
+    IEnemy(SDL_Point, SDL_Point); // constructor
     ~IEnemy(); // deconstructor
     
-    bool move(); // move the enemy on the screen
+    void move(SDL_Point); // move the enemy to the given position
     SDL_Point getPos(); // return the position of the enemy
+    SDL_Point getRowColumn(); // return the row and column of this
     void takeDamage(int); // take x amount of damage from an ITower
     bool isDead(); // return true if health is <= 0, false otherwise
     
-    void setMoveInterval(int); // set the move Interval
+    void setMoveIntervalScale(int, int); // set the move Interval for how many ticks
     int getMoveInterval(); // get the move Interval
     
-    
 protected:
-    int ENEMY_MAX_DIMENSION;
-    double MAX_DISTORTION; // decimal of max percentenge
     SDL_Point pos; // the position of the enemy
-    struct timeval tp; // allows for milliseconds of current time, for animation
-    long long lastMoveTime; // store tiem of last move
+    SDL_Point rowColumn; // the row and column of this enemy
+
     int moveInterval; // move every __ milliseconds
     
     long health; // the current health of enemy
     double maxHealth; // the initial health value
-
-private:
     
+    // is the enemy good to move
+    bool goodToMove();
+    
+    
+private:
+    // move the first point to the second point. add 1 to the direction.
+    void moveToThePoint(SDL_Point, SDL_Point);
+    
+    
+    Counter * counter;
+    
+    Counter * freezeCounter;
+    
+    // the scale of the move interval
+    int moveIntervalScale;
 };
 
 #endif /* IEnemy_hpp */

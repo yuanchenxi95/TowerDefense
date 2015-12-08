@@ -17,9 +17,9 @@
 class FreezeTower : public ITower {
 public:
     // constructor
-    FreezeTower(vector<IEnemy *> *, vector<ITower *> *, SDL_Point);
+    FreezeTower(SDL_Point);
 protected:
-    void attackHelp();
+    void attackHelp(vector<IEnemy*> *);
     
 private:
     

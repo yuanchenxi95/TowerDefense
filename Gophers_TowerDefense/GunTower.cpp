@@ -9,35 +9,24 @@
 #include "GunTower.hpp"
 
 // constructor
-GunTower::GunTower(vector<IEnemy *> * enemiesTemp,
-                   vector<ITower *> * towersTemp,
-                   SDL_Point p) : ITower(enemiesTemp, towersTemp, p) {
+GunTower::GunTower(SDL_Point p) : ITower(p) {
     // initilizes fields
-    // deal 100 damage per attack, range is 100, delay is 3.
+    // deal 100 damage per attack, range is 100, delay is 3000 milliseconds.
     
     damage = 100;
-    attackDelay = 3;
+    attackDelay = 1000;
     range = 180;
     cost = 100;
+    
+    
     
     
 }
 
 // Attack the enemy
-void GunTower::attackHelp() {
-    
-    
-    for (int i = 0; i < enemies->size(); i ++) {
-        IEnemy * ene = (*enemies)[i];
-        
-        if (inRange(ene)) {
-            
-            ene->takeDamage(damage);
-            
-            
-            return;
-        }
+void GunTower::attackHelp(vector<IEnemy*> * enemies) {
+    if (enemies->size() > 0) {
+        (*enemies)[0]->takeDamage(damage);
     }
-    
     
 }

@@ -19,33 +19,33 @@ Controller::~Controller() {
 
 // key handler
 void Controller::handleKey(SDL_Keycode keycode) {
-  switch (keycode) {
-    case SDLK_UP:
-      std::cout << "up arrow pressed!" << std::endl;
-      tdModel->toggleShowBackground();
-      break;
-  }
+//  switch (keycode) {
+//    case SDLK_UP:
+//      std::cout << "up arrow pressed!" << std::endl;
+//      tdModel->toggleShowBackground();
+//      break;
+//  }
 }
 
 // game loop
 void Controller::startLoop() {
-  // Main loop
-  while (tdModel->getGameState() != QUIT) {
-    
-    // 1. Finish responding to all events within event queue
-    while (SDL_PollEvent(&eventHandler) != 0) {
-      switch (eventHandler.type) {
-        case SDL_QUIT:
-          tdModel->setGameState(QUIT);
-          break;
-        case SDL_KEYDOWN:
-          handleKey(eventHandler.key.keysym.sym);
-          break;
-        default:
-          break;
-      }
-    }
-    
-    tdView->render();
-  }
+//  // Main loop
+//  while (tdModel->getGameState() != QUIT) {
+//    
+//    // 1. Finish responding to all events within event queue
+//    while (SDL_PollEvent(&eventHandler) != 0) {
+//      switch (eventHandler.type) {
+//        case SDL_QUIT:
+//          tdModel->setGameState(QUIT);
+//          break;
+//        case SDL_KEYDOWN:
+//          handleKey(eventHandler.key.keysym.sym);
+//          break;
+//        default:
+//          break;
+//      }
+//    }
+//    
+//    tdView->render();
+//  }
 }

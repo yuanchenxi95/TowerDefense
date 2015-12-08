@@ -15,10 +15,10 @@
 class GunTower : public ITower {
 public:
     // constructor
-    GunTower(vector<IEnemy *> *, vector<ITower *> *, SDL_Point);
+    GunTower(SDL_Point);
     
 protected:
-    void attackHelp();
+    void attackHelp(vector<IEnemy*> *);
     
 private:
     

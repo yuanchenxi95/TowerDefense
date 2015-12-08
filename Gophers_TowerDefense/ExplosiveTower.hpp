@@ -14,10 +14,10 @@
 
 class ExplosiveTower : ITower {
 public:
-    ExplosiveTower(vector<IEnemy *> *, vector<ITower *> *, SDL_Point);
+    ExplosiveTower(SDL_Point);
     
 protected:
-    void attackHelp();
+    void attackHelp(vector<IEnemy*> *);
     
     
 private:

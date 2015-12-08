@@ -15,71 +15,56 @@
 #include <iostream>
 #include <vector>
 #include <cmath>
-#include <sys/time.h>
+#include "Counter.hpp"
 
 using namespace std;
 
+// INVARIANT:
+// The position tower == the position of the tile contains this tower
+
 class ITower {
 public:
-    ITower(vector<IEnemy*> *, vector<ITower*> *, SDL_Point p);
+    ITower(SDL_Point);
     ~ITower();
     
-    void attack(); // fuction to begin attacking
+    void attack(vector<IEnemy*> *); // fuction to begin attacking
     
     // get the position of this tower
-    SDL_Point getPos();
+    SDL_Point getRowColumn();
+    
     // get the range of this tower
     int getRange();
     
-    bool inRange(IEnemy *);
+    // tick the counter
+    void tick();
     
     
 protected:
-    int pts_per_kill;
-    SDL_Point pos;
+    // thw row and column of this tower
+    SDL_Point rowColumn;
     int range;
     int damage;
     int cost;
+    
     int attackDelay; // the interval between attacks
     
-    
-//  Should be in view
-//    SDL_Renderer ** gRenderer; // double pointer to renderer
-//    SDL_Texture * gTower; // texture containing tower's image
-//    SDL_Rect gTowerRect; // container for gTower texture
-//    SDL_Texture * gRange; // texture for Range radius
-//    SDL_Rect gRangeRect; // container for Range radius
-    
-    vector<IEnemy*> *enemies; // ref to vector of addresses of enemies from main.cpp
-    vector<ITower*> *towers; // ref to vector of addresses of tower from main.cpp
-    
-    // is there any enemy in range
-    bool anyEnemyInRange();
-    
     // Attack the enemy
-    virtual void attackHelp() = 0;
+    virtual void attackHelp(vector<IEnemy*> *) = 0;
     
-    // update the enemy list, remove the dead enemy
-    void updateEnemyList();
+    
+    Counter * counter;
     
     
     
 private:
     ITower& operator=(const ITower& i);
-    // allows for milliseconds of current time, for attack frequency
-    struct timeval timeStruct;
-    // last time that an Enemy was attacked
-    long long lastAttackTime;
     
     // check whether it is right time to attack
     bool goodToAttack();
     
-    // update the attack time, should do it after attack
-    void updateAttackTime();
-    
-    
     // give two SDL_Points, calculate their distance
     double calcDistance(SDL_Point, SDL_Point);
+
 
     
 };
