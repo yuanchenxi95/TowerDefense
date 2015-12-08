@@ -19,7 +19,8 @@ using namespace std;
 
 class Wave {
 public:
-    
+    Wave(map<EnemyTile *, EnemyTile *> *, vector<IEnemy *> *);
+    ~Wave();
     
 protected:
     
