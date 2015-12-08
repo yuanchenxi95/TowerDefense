@@ -1,43 +1,40 @@
 //
-//  GunTower.cpp
+//  ExplosiveTower.cpp
 //  Gophers_TowerDefense
 //
 //  Created by Chenxi Yuan on 2015/12/5.
 //  Copyright © 2015年 RB. All rights reserved.
 //
 
-#include "GunTower.hpp"
+#include "ExplosiveTower.hpp"
 
-// constructor
-GunTower::GunTower(vector<IEnemy *> * enemiesTemp,
-                   vector<ITower *> * towersTemp,
-                   SDL_Point p) : ITower(enemiesTemp, towersTemp, p) {
+
+
+ExplosiveTower::ExplosiveTower(vector<IEnemy *> * enemiesTemp,
+                               vector<ITower *> * towersTemp,
+                               SDL_Point p) : ITower(enemiesTemp, towersTemp, p) {
     // initilizes fields
     // deal 100 damage per attack, range is 100, delay is 3.
     
-    damage = 100;
+    damage = 20;
     attackDelay = 3;
-    range = 180;
+    range = 50;
     cost = 100;
-    
     
 }
 
-// Attack the enemy
-void GunTower::attackHelp() {
-    
-    
+void ExplosiveTower::attackHelp() {
     for (int i = 0; i < enemies->size(); i ++) {
         IEnemy * ene = (*enemies)[i];
         
         if (inRange(ene)) {
             
             ene->takeDamage(damage);
-            
-            
+                        
             return;
         }
     }
     
+
     
 }

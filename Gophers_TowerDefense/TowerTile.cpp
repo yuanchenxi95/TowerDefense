@@ -21,6 +21,7 @@ TowerTile::TowerTile(SDL_Point p) {
 TowerTile::~TowerTile() {
     // TO-DO Delete SDL_Point
     delete tower;
+    tower = NULL;
 }
 
 // whether this tile is a TowerTile

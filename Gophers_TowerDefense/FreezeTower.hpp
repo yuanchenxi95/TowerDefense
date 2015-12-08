@@ -1,30 +1,31 @@
 //
-//  GunTower.hpp
+//  FreezeTower.hpp
 //  Gophers_TowerDefense
 //
 //  Created by Chenxi Yuan on 2015/12/5.
 //  Copyright © 2015年 RB. All rights reserved.
 //
 
-#ifndef GunTower_hpp
-#define GunTower_hpp
+#ifndef FreezeTower_hpp
+#define FreezeTower_hpp
 
 #include <stdio.h>
+
 #include "ITower.hpp"
 
-class GunTower : public ITower {
+
+class FreezeTower : public ITower {
 public:
     // constructor
-    GunTower(vector<IEnemy *> *, vector<ITower *> *, SDL_Point);
-    
+    FreezeTower(vector<IEnemy *> *, vector<ITower *> *, SDL_Point);
 protected:
     void attackHelp();
     
 private:
     
+    void freezeEnemy(IEnemy *);
+    
     
 };
 
-
-
-#endif /* GunTower_hpp */
+#endif /* FreezeTower_hpp */

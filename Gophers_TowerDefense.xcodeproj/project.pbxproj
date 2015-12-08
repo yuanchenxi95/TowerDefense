@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		127700D81C1382440099A534 /* GunTower.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 127700D61C1382440099A534 /* GunTower.cpp */; };
+		1299A7801C13ABFA00D4E8A5 /* FreezeTower.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1299A77E1C13ABFA00D4E8A5 /* FreezeTower.cpp */; };
+		1299A7841C13DF7A00D4E8A5 /* ExplosiveTower.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1299A7821C13DF7A00D4E8A5 /* ExplosiveTower.cpp */; };
 		12ACCB561C128903002700C3 /* EnemyTile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12ACCB541C128903002700C3 /* EnemyTile.cpp */; };
 		12ACCB591C128C48002700C3 /* TowerTile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12ACCB571C128C48002700C3 /* TowerTile.cpp */; };
 		12ACCB5D1C128E4F002700C3 /* ITower.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12ACCB5B1C128E4F002700C3 /* ITower.cpp */; };
@@ -41,6 +43,10 @@
 /* Begin PBXFileReference section */
 		127700D61C1382440099A534 /* GunTower.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GunTower.cpp; sourceTree = "<group>"; };
 		127700D71C1382440099A534 /* GunTower.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GunTower.hpp; sourceTree = "<group>"; };
+		1299A77E1C13ABFA00D4E8A5 /* FreezeTower.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FreezeTower.cpp; sourceTree = "<group>"; };
+		1299A77F1C13ABFA00D4E8A5 /* FreezeTower.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FreezeTower.hpp; sourceTree = "<group>"; };
+		1299A7821C13DF7A00D4E8A5 /* ExplosiveTower.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ExplosiveTower.cpp; sourceTree = "<group>"; };
+		1299A7831C13DF7A00D4E8A5 /* ExplosiveTower.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ExplosiveTower.hpp; sourceTree = "<group>"; };
 		12ACCB541C128903002700C3 /* EnemyTile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EnemyTile.cpp; sourceTree = "<group>"; };
 		12ACCB551C128903002700C3 /* EnemyTile.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = EnemyTile.hpp; sourceTree = "<group>"; };
 		12ACCB571C128C48002700C3 /* TowerTile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TowerTile.cpp; sourceTree = "<group>"; };
@@ -107,6 +113,10 @@
 				12ACCB5C1C128E4F002700C3 /* ITower.hpp */,
 				127700D61C1382440099A534 /* GunTower.cpp */,
 				127700D71C1382440099A534 /* GunTower.hpp */,
+				1299A77E1C13ABFA00D4E8A5 /* FreezeTower.cpp */,
+				1299A77F1C13ABFA00D4E8A5 /* FreezeTower.hpp */,
+				1299A7821C13DF7A00D4E8A5 /* ExplosiveTower.cpp */,
+				1299A7831C13DF7A00D4E8A5 /* ExplosiveTower.hpp */,
 			);
 			name = TowerData;
 			sourceTree = "<group>";
@@ -160,8 +170,6 @@
 				6F63870E1C111B2800A9CD18 /* ITowerDefenseModel.hpp */,
 				6F6387101C111D2E00A9CD18 /* GophersTowerDefenseModel.cpp */,
 				6F6387111C111D2E00A9CD18 /* GophersTowerDefenseModel.hpp */,
-				12DB9DDD1C136B01001CDD4F /* HealthBar.cpp */,
-				12DB9DDE1C136B01001CDD4F /* HealthBar.hpp */,
 				12DB9DE01C136B47001CDD4F /* Object.cpp */,
 				12DB9DE11C136B47001CDD4F /* Object.hpp */,
 			);
@@ -175,6 +183,8 @@
 				6F4574E41C1126C1008E3164 /* ITowerDefenseView.hpp */,
 				6F4574E61C112764008E3164 /* GophersTowerDefenseView.cpp */,
 				6F4574E71C112764008E3164 /* GophersTowerDefenseView.hpp */,
+				12DB9DDD1C136B01001CDD4F /* HealthBar.cpp */,
+				12DB9DDE1C136B01001CDD4F /* HealthBar.hpp */,
 			);
 			name = TD_View;
 			sourceTree = "<group>";
@@ -248,6 +258,7 @@
 			files = (
 				6F3E5B581C1108C00058D38C /* main.cpp in Sources */,
 				12ACCB591C128C48002700C3 /* TowerTile.cpp in Sources */,
+				1299A7801C13ABFA00D4E8A5 /* FreezeTower.cpp in Sources */,
 				6F4574E01C112463008E3164 /* ITile.cpp in Sources */,
 				12DB9DDF1C136B01001CDD4F /* HealthBar.cpp in Sources */,
 				12DB9DE21C136B47001CDD4F /* Object.cpp in Sources */,
@@ -256,6 +267,7 @@
 				127700D81C1382440099A534 /* GunTower.cpp in Sources */,
 				6F63870F1C111B2800A9CD18 /* ITowerDefenseModel.cpp in Sources */,
 				12ACCB611C12CAEF002700C3 /* IEnemy.cpp in Sources */,
+				1299A7841C13DF7A00D4E8A5 /* ExplosiveTower.cpp in Sources */,
 				6F4574E51C1126C1008E3164 /* ITowerDefenseView.cpp in Sources */,
 				12ACCB561C128903002700C3 /* EnemyTile.cpp in Sources */,
 				6F6387071C1118E800A9CD18 /* Controller.cpp in Sources */,

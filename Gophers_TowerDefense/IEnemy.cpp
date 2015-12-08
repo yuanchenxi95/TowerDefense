@@ -9,21 +9,21 @@
 #include "IEnemy.hpp"
 
 
-IEnemy::IEnemy(SDL_Renderer** gRendererPtr)  {
-    // TO-DO
+IEnemy::IEnemy()  {
+    
+    
+    
+    
+    
+    
 }
 
 // delete allocated memory
 IEnemy::~IEnemy() {
     // TO-DO
     
-    SDL_DestroyTexture(gEnemy);
 }
 
-// render the enemy
-void IEnemy::render() {
-    
-}
 
 // get the position of enemy
 SDL_Point IEnemy::getPos() {
@@ -39,3 +39,18 @@ void IEnemy::takeDamage(int damage) {
 bool IEnemy::isDead() {
     return health <= 0;
 }
+
+// set the moveInterval
+void IEnemy::setMoveInterval(int mi) {
+    moveInterval = mi;
+}
+
+// get the moveInterval
+int IEnemy::getMoveInterval() {
+    return moveInterval;
+}
+
+
+
+
+
