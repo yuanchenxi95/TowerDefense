@@ -10,20 +10,24 @@
 #define MapGenerator_hpp
 
 #include <stdio.h>
-#include "ITile.hpp"
-#include "EnemyTile.hpp"
-#include "TowerTile.hpp"
-#include "vector"
+#include "MapStructure.hpp"
+
 
 class MapGenerator {
 public:
     MapGenerator();
     ~MapGenerator();
     
-    vector<vector<ITile>> getMapOne();
+    MapStructure getMapOne();
     
+private:
+    void putETP(int x, int y);
     
+    // clear the list
+    void resetTheList();
     
+    // list of enemy tile points
+    vector<SDL_Point> * loETP;
     
 };
 

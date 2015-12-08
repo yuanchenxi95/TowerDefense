@@ -13,7 +13,7 @@
 
 // initialize the EnemyTile with the given Point
 EnemyTile::EnemyTile(SDL_Point p) {
-    pos = p;
+    rowColumn = p;
     towerTile = false;
     enemyTile = true;
 }
@@ -32,9 +32,4 @@ bool EnemyTile::isTowerTile() {
 // whether this tile is an enmemy path
 bool EnemyTile::isEnemyTile() {
     return enemyTile;
-}
-
-// get the position of this tile
-SDL_Point EnemyTile::getPos() {
-    return pos; 
 }

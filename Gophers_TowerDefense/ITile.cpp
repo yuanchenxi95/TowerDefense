@@ -4,3 +4,6 @@
 ITile::~ITile() { }
 
 
+SDL_Point ITile::getRowColumn() {
+    return rowColumn;
+}

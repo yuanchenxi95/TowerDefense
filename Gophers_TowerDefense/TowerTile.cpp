@@ -11,7 +11,7 @@
 
 // initialize the EnemyTile with the given Point
 TowerTile::TowerTile(SDL_Point p) {
-    pos = p;
+    rowColumn = p;
     towerTile = true;
     enemyTile = false;
     occupied = false;
@@ -34,10 +34,6 @@ bool TowerTile::isEnemyTile() {
     return enemyTile;
 }
 
-// get the position of this tile
-SDL_Point TowerTile::getPos() {
-    return pos;
-}
 
 // is this tile occupied
 bool TowerTile::isOccupied() {

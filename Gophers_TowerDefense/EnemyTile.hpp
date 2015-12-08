@@ -25,9 +25,7 @@ public:
     
     // whether this tile is an enmemy path
     bool isEnemyTile();
-    
-    // get the position of this tile
-    SDL_Point getPos();
+
     
     
 protected:

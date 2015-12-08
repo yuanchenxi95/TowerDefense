@@ -25,7 +25,7 @@ public:
     virtual bool isEnemyTile() = 0;
     
     // get the position of this tile
-    virtual SDL_Point getPos() = 0;
+    virtual SDL_Point getRowColumn();
     
     
     
@@ -36,7 +36,7 @@ protected:
     bool enemyTile;
     
     // the position of this tile
-    SDL_Point pos;
+    SDL_Point rowColumn;
     
     
 private:
