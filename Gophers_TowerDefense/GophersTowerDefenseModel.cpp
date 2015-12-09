@@ -13,7 +13,7 @@ GophersTowerDefenseModel::GophersTowerDefenseModel() {
     towerManager = new TowerManager();
     
     
-    health = 99;
+    health = 1;
     money = 990;
     
     buildTower(2, 2, TowerType::GUNTOWER);

@@ -48,6 +48,9 @@ private:
   SDL_Texture * texture_turtleNormal = NULL;
   SDL_Texture * texture_turtleFast = NULL;
   SDL_Texture * texture_turtleTank = NULL;
+    
+  // Gameover texture:
+  SDL_Texture * texture_gameOver = NULL;
   
   // Outputs the last SDL error with given prompt intro
   void outputSDLError(std::string prompt);

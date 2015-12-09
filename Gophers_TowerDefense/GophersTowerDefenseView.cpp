@@ -44,6 +44,9 @@ void GophersTowerDefenseView::destructAndCloseAll() {
     SDL_DestroyTexture(texture_turtleTank);
     texture_turtleTank = NULL;
     
+    SDL_DestroyTexture(texture_gameOver);
+    texture_gameOver = NULL;
+    
     // Free surfaces
     SDL_FreeSurface(backgroundSurface);
     backgroundSurface = NULL;
@@ -70,6 +73,17 @@ void GophersTowerDefenseView::render() {
     SDL_RenderClear(renderer);
     
     //  SDL_FillRect(windowSurface, 0, SDL_MapRGB(windowSurface->format, 0, 0, 0));
+    
+    if (tdModel->getGameState() == GAMEMOVER) {
+        SDL_Rect rect =
+        // x and y are the position
+        {0, 0, WINDOW_WIDTH, WINDOW_HEIGHT};
+        SDL_RenderCopy(renderer, texture_gameOver, NULL, &rect);
+        SDL_RenderPresent(renderer);
+        return;
+    }
+    
+    
     
     // Render to screen
     for (ITile * tile : *tdModel->getBoard()) {
@@ -197,7 +211,8 @@ bool GophersTowerDefenseView::loadMedia() {
     texture_turtleFast = loadTexture("turtleTankSprite.png");
     texture_turtleTank = loadTexture("turtleFastSprite.png");
     
-    // TO-DO
+    // Gameover texture:
+    texture_gameOver = loadTexture("gameovertext.jpg");
     
     return !hasFailed;
 }

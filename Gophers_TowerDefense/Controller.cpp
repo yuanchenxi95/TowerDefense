@@ -44,7 +44,6 @@ void Controller::handleKey(SDL_Event e) {
         
         if (e.type == SDL_KEYDOWN) {
             
-            std::cout << "reach this" << endl;
             switch (e.key.keysym.sym){
                 case SDLK_f:
                 {
@@ -89,6 +88,12 @@ unsigned int lastTime = 0, currentTime;
 void Controller::startLoop() {
     // Main loop
     while (tdModel->getGameState() != QUIT) {
+        
+        switch (eventHandler.type) {
+            case SDL_QUIT:
+                tdModel->setGameState(QUIT);
+                break;
+        }
         
         currentTime = SDL_GetTicks();
         if (currentTime > lastTime + 1) {

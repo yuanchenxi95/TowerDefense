@@ -36,10 +36,7 @@ MapStructure::MapStructure(vector<SDL_Point*> * epl, int ro, int cl) {
         }
     }
     
-    for (ITile * t : *
-         board) {
-        cout << t->getRow() << " " << t->getColumn() << endl;
-    }
+
 
     // initialize the path
     for (SDL_Point *p : *enemyPathList) {
