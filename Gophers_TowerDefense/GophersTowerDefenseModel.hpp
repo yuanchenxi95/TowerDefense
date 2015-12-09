@@ -9,8 +9,6 @@
 #include "TowerManager.hpp"
 
 
-
-
 /*
  * Gophers tower defence model class, a subclass of the ITowerDefenseModel
  *
@@ -30,17 +28,23 @@ public:
     virtual void setGameState(GameState newState);
     
     // return the board, vector<vector<ITile *> *> *
-    vector<vector<ITile *> *> * getBoard();
+    virtual vector<vector<ITile *> *> * getBoard();
     
     // return the list of enemies, vector<IEnemy *> *
-    vector<IEnemy *> * getEnemies();
+    virtual vector<IEnemy *> * getEnemies();
     
     // return the lsit of towers, vector<ITower *> *
-    vector<ITower *> * getTowers();
+    virtual vector<ITower *> * getTowers();
     
     
     // tick the world
-    void tick();
+    virtual void tick();
+    
+    // return the current health
+    virtual int getHealth();
+    
+    // return the current money
+    virtual int getMoney();
     
     
 private:
@@ -70,7 +74,8 @@ private:
     // TODO
     
     // the player field
-    // TODO
+    int health;
+    int money;
     
 };
 

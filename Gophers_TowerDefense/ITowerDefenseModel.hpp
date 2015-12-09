@@ -40,6 +40,12 @@ public:
     // return the lsit of towers, vector<ITower *> *
     virtual vector<ITower *> * getTowers() = 0;
     
+    // return the current health
+    virtual int getHealth() = 0;
+    
+    // return the current money
+    virtual int getMoney() = 0;
+    
     
 private:
     ITowerDefenseModel& operator=(const ITowerDefenseModel & other);
