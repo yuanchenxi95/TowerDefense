@@ -12,8 +12,8 @@ Wave::Wave(EnemyPath * tep, vector<IEnemy *> * tloe) {
     ep = tep;
     loe = tloe;
     
-    //spawn every minion in 2000 milliseconds
-    spawnCounter = new Counter(new int(2000));
+    //spawn every minion in 100 milliseconds
+    spawnCounter = new Counter(new int(100));
     
     tileOfEnemy = new map<IEnemy*, EnemyTile*>();
     
@@ -48,7 +48,9 @@ void Wave::tick() {
     
     for (IEnemy * e : *loe) {
         e->tick();
+        
     }
+    
     
 }
 
@@ -69,6 +71,10 @@ int Wave::move() {
     
     
     for (IEnemy * e : *loe) {
+        
+        //update the destination tile of the enemy after the moves
+        updateDestinationTile(e);
+        
         // move the enemy
         if (e->isOnBoard()) {
             if (e->isDead()) {
@@ -79,9 +85,12 @@ int Wave::move() {
         // spawn an enemy, set alreadySpawn to false
         else if (!alreadySpawn) {
             alreadySpawn = true;
+            
             spawnEnemy(e);
         }
     }
+    
+//    std::cout << loe->at(0)->getX() << " " << loe ->at(0)->getY() << endl;
     
     
     int count = killEndEnemy();
@@ -94,6 +103,8 @@ int Wave::move() {
 
 // update enemy list, remove the dead enemies
 void Wave::updateList() {
+    
+    killEndEnemy();
     for (int i = 0; i < loe->size(); i++) {
         IEnemy * e = loe->at(i);
         if (e->isDead()) {
@@ -145,9 +156,7 @@ void Wave::moveHelp(IEnemy * e) {
     
     e->move(et->getX(), et->getY());
     
-    
-    //update the destination tile of the enemy after the moves
-    updateDestinationTile(e);
+
     
     
 }
@@ -155,15 +164,28 @@ void Wave::moveHelp(IEnemy * e) {
 // update the destination tile of the enemy
 void Wave::updateDestinationTile(IEnemy * e) {
     
+    
     EnemyTile * et = tileOfEnemy->find(e)->second;
+    
+    if (ep->getEpMap()->find(et) == ep->getEpMap()->end()) {
+        return;
+    }
     
     // check if it reaches the position of this tile
     // update the destination of this tile
     if (e->getX() == et->getX() && e->getY() == et->getY()) {
         
+        
         EnemyTile * etNext = ep->getEpMap()->find(et)->second;
         
-        tileOfEnemy->insert(make_pair(e, etNext));
+//        cout << "reach" << endl;
+        
+        std::map<IEnemy *, EnemyTile *>::iterator it = tileOfEnemy->find(e);
+        if (it != tileOfEnemy->end()) {
+            
+            it->second = etNext;
+        }
+        
     }
 }
 
@@ -171,7 +193,10 @@ void Wave::updateDestinationTile(IEnemy * e) {
 int Wave::killEndEnemy() {
     int count = 0;
     for (IEnemy * e : *loe) {
-        if (tileOfEnemy->find(e)->second == ep->getEnd()) {
+        
+        EnemyTile * et = tileOfEnemy->find(e)->second;
+        
+        if (ep->getEpMap()->find(et) == ep->getEpMap()->end()) {
             e->kill();
             count++;
         }
@@ -183,6 +208,8 @@ int Wave::killEndEnemy() {
 // spawn an enemy on board
 void Wave::spawnEnemy(IEnemy * e) {
     if (spawnCounter->isCoolDown()) {
+        
+        
         e->setOnBoard(true);
         spawnCounter->reset();
     }

@@ -11,7 +11,7 @@
 
 Soldier::Soldier(int x, int y) : IEnemy(x, y) {
     
-    moveInterval = 10;
+    moveInterval = 4;
     
     health = 2000;
     maxHealth = 2000;

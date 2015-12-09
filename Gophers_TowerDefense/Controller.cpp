@@ -35,7 +35,7 @@ void Controller::startLoop() {
   while (tdModel->getGameState() != QUIT) {
     
     currentTime = SDL_GetTicks();
-    if (currentTime > lastTime + 300) {
+    if (currentTime > lastTime + 1) {
       tdModel->tick();
       tdView->render();
       lastTime = currentTime;

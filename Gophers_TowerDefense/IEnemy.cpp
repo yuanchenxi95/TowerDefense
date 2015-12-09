@@ -35,9 +35,13 @@ IEnemy::~IEnemy() {
 // move the enemy to the given position
 void IEnemy::move(int tx, int ty) {
   
+    
     // check whether it satisfies the requirement of moving
     if (goodToMove()) {
+        
+//        std::cout << x << " " << y << std::endl;
         moveToThePoint(x, y, tx, ty);
+        counter->reset();
     }
     
 }
@@ -113,19 +117,19 @@ bool IEnemy::goodToMove() {
 // if on the same spot, don't move
 void IEnemy::moveToThePoint(int x1, int y1, int x2, int y2) {
     if (x2 > x1) {
-        x1 += 1;
+        x += 1;
     }
     
     if (x2 < x1) {
-        x1 -= 1;
+        x -= 1;
     }
     
     if (y2 > y1) {
-        y1 += 1;
+        y += 1;
     }
     
     if (y2 < y1) {
-        y1 -= 1;
+        y -= 1;
     }
 }
 

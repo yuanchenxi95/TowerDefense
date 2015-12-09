@@ -33,10 +33,11 @@ WaveManager::~WaveManager() {
 // tick all the enemies' counters and spawnCounter
 int WaveManager::tickAndMove() {
     if (allEnemiesDead()) {
+        delete wave;
         wave = createNewWave();
     }
-    delete wave;
     
+    wave->tick();
     return (*wavePointer)->move();
 }
 
