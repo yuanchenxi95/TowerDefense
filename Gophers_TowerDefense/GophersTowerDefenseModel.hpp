@@ -48,6 +48,8 @@ public:
     // build the tower, return ture if success
     virtual bool buildTower(int r, int c, TowerType);
     
+    virtual int getTileSize();
+    
     
 private:
     

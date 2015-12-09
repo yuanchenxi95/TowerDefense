@@ -15,6 +15,7 @@
 class Tank : public IEnemy {
 public:
     Tank(int x, int y);
+    virtual ~Tank();
     
     EnemyType getEnemyType();
     

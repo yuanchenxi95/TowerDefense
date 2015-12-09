@@ -18,6 +18,11 @@ Tank::Tank(int x, int y) : IEnemy(x, y) {
     
 }
 
+Tank::~Tank() {
+    delete counter;
+    counter = NULL;
+}
+
 EnemyType Tank::getEnemyType() {
     return TANK;
 }

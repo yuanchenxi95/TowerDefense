@@ -22,3 +22,8 @@ Soldier::Soldier(int x, int y) : IEnemy(x, y) {
 EnemyType Soldier::getEnemyType() {
     return SOLDIER;
 }
+
+Soldier::~Soldier() {
+    delete counter;
+    counter = NULL;
+}

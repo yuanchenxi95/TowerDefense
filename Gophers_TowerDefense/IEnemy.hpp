@@ -26,7 +26,8 @@ class IEnemy {
 public:
     
     IEnemy(int x, int y); // constructor
-    ~IEnemy(); // deconstructor
+    
+    virtual ~IEnemy() = 0; // deconstructor
     
     void move(int, int); // move the enemy to the given position
     void setPosition(int, int); // set the pos to the given position
@@ -64,12 +65,14 @@ protected:
     bool goodToMove();
     
     
+    Counter * counter;
+    
+    
 private:
     // move the first point to the second point. add 1 to the direction.
     void moveToThePoint(int, int, int, int);
     
-    
-    Counter * counter;
+
     
     Counter * freezeCounter;
     

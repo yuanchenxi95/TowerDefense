@@ -14,7 +14,7 @@ GophersTowerDefenseModel::GophersTowerDefenseModel() {
     
     
     health = 99;
-    money = 99999;
+    money = 990;
     
     buildTower(2, 2, TowerType::GUNTOWER);
     buildTower(4, 4, TowerType::FREEZETOWER);
@@ -142,5 +142,9 @@ bool GophersTowerDefenseModel::buildTower(int r, int c, TowerType towerType) {
 
 
 
+// get the Tile Size
+int GophersTowerDefenseModel::getTileSize() {
+    return ITile::TILE_SIZE;
+}
 
 

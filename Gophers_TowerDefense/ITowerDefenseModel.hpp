@@ -51,6 +51,9 @@ public:
     
     // tick the world
     virtual void tick() = 0;
+    
+    // get the Tile size
+    virtual int getTileSize() = 0;
   
 private:
     ITowerDefenseModel& operator=(const ITowerDefenseModel & other);

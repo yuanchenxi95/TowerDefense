@@ -36,6 +36,9 @@ public:
     // create new Wave
     Wave * createNewWave();
     
+    // get the wave number
+    int getWaveNumber();
+    
     
 protected:
     // set the spawnEnemy to the given bool
@@ -50,6 +53,7 @@ private:
     Wave * wave;
     bool spawnEnemy;
     EnemyPath * ep;
+    int count = 0;
     
     
     

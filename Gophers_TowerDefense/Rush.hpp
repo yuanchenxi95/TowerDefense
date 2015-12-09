@@ -15,6 +15,7 @@
 class Rush : public IEnemy {
 public:
     Rush(int x, int y);
+    virtual ~Rush();
     
     EnemyType getEnemyType();
 private:

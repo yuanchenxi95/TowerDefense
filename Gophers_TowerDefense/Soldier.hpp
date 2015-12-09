@@ -15,7 +15,7 @@
 class Soldier : public IEnemy {
 public:
     Soldier(int x, int y);
-    
+    virtual ~Soldier();
     EnemyType getEnemyType();
 private:
     

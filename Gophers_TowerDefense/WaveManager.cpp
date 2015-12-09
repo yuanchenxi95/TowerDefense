@@ -35,6 +35,8 @@ int WaveManager::tickAndMove() {
     if (allEnemiesDead()) {
         delete wave;
         wave = createNewWave();
+        count ++;
+        
     }
     
     wave->tick();
@@ -66,21 +68,28 @@ Wave* WaveManager::createNewWave() {
     int x = ep->getStart()->getX();
     int y = ep->getStart()->getY();
     
-    Soldier * s1 = new Soldier(x, y);
-    Soldier * s2 = new Soldier(x, y);
-    Soldier * s3 = new Soldier(x, y);
-    Tank * t1 = new Tank(x, y);
-    Rush * r1 = new Rush(x, y);
     
-    
-    loe->push_back(s1);
-    loe->push_back(s2);
-    loe->push_back(s3);
-    loe->push_back(t1);
-    loe->push_back(r1);
+    for (int i = 5; i <= count; i++) {
+        Soldier * s1 = new Soldier(x, y);
+        Soldier * s2 = new Soldier(x, y);
+        Soldier * s3 = new Soldier(x, y);
+        Tank * t1 = new Tank(x, y);
+        Rush * r1 = new Rush(x, y);
+        
+        
+        
+        
+        loe->push_back(t1);
+        loe->push_back(s1);
+        loe->push_back(s2);
+        loe->push_back(s3);
+        loe->push_back(r1);
+    }
     
     
     return new Wave(ep, loe);
+    
+    
     
 }
 
@@ -92,4 +101,9 @@ void WaveManager::setSpawnEnemy(bool b) {
 // is it good to Spawn
 bool WaveManager::goodToSpawn() {
     return wave == NULL && spawnEnemy;
+}
+
+// get the wave number
+int WaveManager::getWaveNumber() {
+    return count;
 }

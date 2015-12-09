@@ -40,7 +40,7 @@ Wave::~Wave() {
     
     
     // TO-DO
-    
+    delete loe;
     
 }
 

@@ -10,7 +10,7 @@ class IController {
 public:
   virtual ~IController() = 0;
   
-  virtual void handleKey(SDL_Keycode keycode) = 0;
+  virtual void handleKey(SDL_Event e) = 0;
   
   virtual void startLoop() = 0;
   

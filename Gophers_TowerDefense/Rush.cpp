@@ -20,6 +20,11 @@ Rush::Rush(int x, int y) : IEnemy(x, y) {
 }
 
 
+Rush::~Rush() {
+    delete counter;
+    counter = NULL;
+}
+
 EnemyType Rush::getEnemyType() {
     return RUSH;
 }

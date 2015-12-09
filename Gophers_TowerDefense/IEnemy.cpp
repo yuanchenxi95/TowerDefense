@@ -25,14 +25,8 @@ IEnemy::IEnemy(int tx, int ty)  {
 }
 
 // delete allocated memory
-IEnemy::~IEnemy() {
-    // TO-DO
-    delete counter;
-    counter = NULL;
-    
-    
-    
-}
+// destructor
+IEnemy::~IEnemy() { }
 
 // move the enemy to the given position
 void IEnemy::move(int tx, int ty) {
