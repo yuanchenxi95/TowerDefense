@@ -40,7 +40,7 @@ void GophersTowerDefenseModel::tick() {
 }
 
 // return the board, vector<vector<ITile *> *> *
-vector<vector<ITile *> *> * GophersTowerDefenseModel::getBoard() {
+vector<ITile*> * GophersTowerDefenseModel::getBoard() {
     return mapStructure->getBoard();
 }
 

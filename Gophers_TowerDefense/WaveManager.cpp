@@ -61,13 +61,15 @@ Wave* WaveManager::createNewWave() {
     
     vector<IEnemy*> * loe = new vector<IEnemy*>();
     
-    SDL_Point * startPos = ep->getStart()->getPos();
     
-    Soldier * s1 = new Soldier(startPos);
-    Soldier * s2 = new Soldier(startPos);
-    Soldier * s3 = new Soldier(startPos);
-    Tank * t1 = new Tank(startPos);
-    Rush * r1 = new Rush(startPos);
+    int x = ep->getStart()->getX();
+    int y = ep->getStart()->getY();
+    
+    Soldier * s1 = new Soldier(x, y);
+    Soldier * s2 = new Soldier(x, y);
+    Soldier * s3 = new Soldier(x, y);
+    Tank * t1 = new Tank(x, y);
+    Rush * r1 = new Rush(x, y);
     
     
     loe->push_back(s1);

@@ -10,9 +10,10 @@
 #include <iostream>
 
 
-ITower::ITower(SDL_Point* p, Wave ** w) {
+ITower::ITower(int tx, int ty, Wave ** w) {
     
-    pos = p;
+    x = tx;
+    y = ty;
     
     wavePointer = w;
     
@@ -29,9 +30,14 @@ ITower::~ITower() {
 
 
 // get the position of this tower
-SDL_Point* ITower::getPos() {
-    return pos;
+int ITower::getX() {
+    return x;
 }
+
+int ITower::getY() {
+    return y;
+}
+
 
 
 // get the range of this tower
@@ -73,8 +79,14 @@ bool ITower::goodToAttack() {
 // Is the given enemy in the range of this tower?
 bool ITower::inRange(IEnemy * ene) {
 
-    SDL_Point * enemy_pos = ene->getPos();
-    double distance = calcDistance(enemy_pos, pos);
+    int x1 = getX();
+    int y1 = getY();
+    
+    int x2 = ene->getX();
+    int y2 = ene->getY();
+    
+    int distance = calcDistance(x1, y1, x2, y2);
+    
     return distance <= range;
 }
 
@@ -103,8 +115,8 @@ bool ITower::anyEnemyInRange() {
 //}
 
 // give two SDL_Points, calculate their distance
-double ITower::calcDistance(SDL_Point * a, SDL_Point * b) {
-    return sqrt(pow(a->y - b->y, 2) + pow(a->x - b->x, 2));
+double ITower::calcDistance(int x1, int y1, int x2, int y2) {
+    return sqrt(pow(y1 - y2, 2) + pow(x1 - x2, 2));
 }
 
 

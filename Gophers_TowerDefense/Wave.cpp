@@ -143,7 +143,7 @@ void Wave::moveHelp(IEnemy * e) {
     EnemyTile * et = tileOfEnemy->find(e)->second;
     
     
-    e->move(et->getPos());
+    e->move(et->getX(), et->getY());
     
     
     //update the destination tile of the enemy after the moves
@@ -159,7 +159,7 @@ void Wave::updateDestinationTile(IEnemy * e) {
     
     // check if it reaches the position of this tile
     // update the destination of this tile
-    if (e->getPos() == et->getPos()) {
+    if (e->getX() == et->getX() && e->getY() == et->getY()) {
         
         EnemyTile * etNext = ep->getEpMap()->find(et)->second;
         

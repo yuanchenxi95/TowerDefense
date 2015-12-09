@@ -25,13 +25,15 @@ enum EnemyType {
 class IEnemy {
 public:
     
-    IEnemy(SDL_Point*); // constructor
+    IEnemy(int x, int y); // constructor
     ~IEnemy(); // deconstructor
     
-    void move(SDL_Point*); // move the enemy to the given position
-    void setPosition(SDL_Point*); // set the pos to the given position
+    void move(int, int); // move the enemy to the given position
+    void setPosition(int, int); // set the pos to the given position
     
-    SDL_Point * getPos(); // return the position of the enemy
+    // return the position of the enemy
+    int getX();
+    int getY();
     
     void takeDamage(int); // take x amount of damage from an ITower
     bool isDead(); // return true if health is <= 0, false otherwise
@@ -49,8 +51,10 @@ public:
 
     
 protected:
-    SDL_Point * pos; // the position of the enemy
-
+    // the position of the enemy
+    int x;
+    int y;
+    
     int moveInterval; // move every __ milliseconds
     
     long health; // the current health of enemy
@@ -62,7 +66,7 @@ protected:
     
 private:
     // move the first point to the second point. add 1 to the direction.
-    void moveToThePoint(SDL_Point*, SDL_Point*);
+    void moveToThePoint(int, int, int, int);
     
     
     Counter * counter;

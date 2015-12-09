@@ -10,7 +10,7 @@
 
 // constructor
 // slow down enemy
-FreezeTower::FreezeTower(SDL_Point* p, Wave ** w) : ITower(p, w) {
+FreezeTower::FreezeTower(int x, int y, Wave ** w) : ITower(x, y, w) {
     // initilizes fields
     // deal 100 damage per attack, range is 100, delay is 3000 milliseconds.
     

@@ -19,9 +19,36 @@ MapStructure::MapStructure(vector<SDL_Point*> * epl, int ro, int cl) {
     
     loET = new vector<EnemyTile*>();
     
-    initializeBoard();
-    setUpEnemyPath();
-    setUpTowerTiles();
+    
+    board = new vector<ITile *>();
+    
+    
+    // initialize the board
+    for (int i = 0; i < row; i ++) {
+        for (int j = 0; j < column; j++) {
+            
+            if(inList(i, j)) {
+                board->push_back(new EnemyTile(i, j));
+            } else {
+                board->push_back(new TowerTile(i, j));
+            }
+            
+        }
+    }
+    
+    for (ITile * t : *
+         board) {
+        cout << t->getRow() << " " << t->getColumn() << endl;
+    }
+
+    // initialize the path
+    for (SDL_Point *p : *enemyPathList) {
+        
+        loET->push_back(new EnemyTile(p->x, p->y));
+        
+    }
+    
+    enemyPath = new EnemyPath(loET);
     
 }
 
@@ -50,6 +77,15 @@ MapStructure::~MapStructure() {
     // delete enemypath
     delete enemyPath;
     
+    // delete list of enemyTile
+    for (EnemyTile * t : *loET) {
+        delete t;
+        t = NULL;
+    }
+    
+    delete loET;
+    loET = NULL;
+    
     
 }
 
@@ -57,75 +93,20 @@ EnemyPath* MapStructure::getEnemyPath() {
     return enemyPath;
 }
 
-vector<vector<ITile*>*> * MapStructure::getBoard() {
+vector<ITile*> * MapStructure::getBoard() {
     return board;
 }
 
-
-// allocate the space of the board.
-void MapStructure::initializeBoard() {
-    
-    SDL_Point * p = new SDL_Point();
-    p->x = 0;
-    p->y = 0;
-    
-    ITile * itc = new TowerTile(p);
-    
-    vector<ITile*> * vc = new vector<ITile*>(column, itc);
-    
-    board = new vector<vector<ITile*>*>(row, vc);
-
-    
-}
-
-// set up the enemy tiles and the enemy path
-void MapStructure::setUpEnemyPath() {
-    
-    
-    for (SDL_Point * p: *enemyPathList) {
-        // check enemyPathList
-        if (p->x >= row && p->x < 0 && p->y >= column && p->y < 0) {
-            cerr << " Illegal coordinate for Enemy Tower" << endl;
-        }
-        
-        
-        EnemyTile * et = new EnemyTile(p);
-        
-        // change the correspond TowerTile to EnemyTile
-        //(*(*board)[p->x])[p->y] = et;
-        
-        
-        board->at(p->x)->at(p->y) = et;
-        
-        loET->push_back(et);
-    }
-    
-    enemyPath = new EnemyPath(loET);
-    
-}
-
-
-// set up the tower tiles
-void MapStructure::setUpTowerTiles() {
-    
-    
-    for(int i = 0; i < column; i++) {
-        for(int j = 0; j < row; j++) {
-            
-            // if this space does not have a tile, build a tower tile
-            if ((*(*board)[i])[j] == NULL) {
-                
-                SDL_Point * p;
-                p->x = i;
-                p->y = j;
-                
-                //board->at(i)->push_back(new TowerTile(p));
-                (*(*board)[i])[j] = new TowerTile(p);
-                
-            }
+bool MapStructure::inList(int x, int y) {
+    for (SDL_Point * p : *enemyPathList) {
+        if (p->x == x && p->y == y) {
+            return true;
         }
     }
     
+    return false;
+    
 }
+
 
 

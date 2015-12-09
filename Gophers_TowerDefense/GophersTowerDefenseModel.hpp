@@ -28,7 +28,7 @@ public:
     virtual void setGameState(GameState newState);
     
     // return the board, vector<vector<ITile *> *> *
-    virtual vector<vector<ITile *> *> * getBoard();
+    virtual vector<ITile *> * getBoard();
     
     // return the list of enemies, vector<IEnemy *> *
     virtual vector<IEnemy *> * getEnemies();

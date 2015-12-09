@@ -9,7 +9,7 @@
 #include "Soldier.hpp"
 
 
-Soldier::Soldier(SDL_Point * p) : IEnemy(p) {
+Soldier::Soldier(int x, int y) : IEnemy(x, y) {
     
     moveInterval = 10;
     

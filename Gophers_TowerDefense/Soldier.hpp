@@ -14,7 +14,7 @@
 
 class Soldier : public IEnemy {
 public:
-    Soldier(SDL_Point* p);
+    Soldier(int x, int y);
     
     EnemyType getEnemyType();
 private:
