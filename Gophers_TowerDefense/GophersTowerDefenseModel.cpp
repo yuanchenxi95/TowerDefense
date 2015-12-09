@@ -38,6 +38,22 @@ void GophersTowerDefenseModel::tick() {
     towerManager->tickAndAttack();
 }
 
+// return the board, vector<vector<ITile *> *> *
+vector<vector<ITile *> *> * GophersTowerDefenseModel::getBoard() {
+    return mapStructure->getBoard();
+}
+
+// return the list of enemies, vector<IEnemy *> *
+vector<IEnemy *> * GophersTowerDefenseModel::getEnemies() {
+    return waveManager->getEnemies();
+}
+
+// return the lsit of towers, vector<ITower *> *
+vector<ITower *> * GophersTowerDefenseModel::getTowers() {
+    return towerManager->getTowerList();
+}
+
+
 
 
 

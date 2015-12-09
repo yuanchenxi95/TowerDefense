@@ -29,6 +29,16 @@ public:
     // sets the current GameState to the given state
     virtual void setGameState(GameState newState);
     
+    // return the board, vector<vector<ITile *> *> *
+    vector<vector<ITile *> *> * getBoard();
+    
+    // return the list of enemies, vector<IEnemy *> *
+    vector<IEnemy *> * getEnemies();
+    
+    // return the lsit of towers, vector<ITower *> *
+    vector<ITower *> * getTowers();
+    
+    
     // tick the world
     void tick();
     

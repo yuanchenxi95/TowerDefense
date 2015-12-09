@@ -36,6 +36,9 @@ vector<ITower *> * TowerManager::getTowerList() {
 
 // tick and attack
 void TowerManager::tickAndAttack() {
-    
+    for (ITower * t: *lot) {
+        t->tick();
+        t->attack();
+    }
 }
 

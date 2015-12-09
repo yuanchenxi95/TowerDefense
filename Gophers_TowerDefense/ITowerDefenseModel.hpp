@@ -3,6 +3,7 @@
 
 #include "ITile.hpp"
 #include "ITower.hpp"
+#include <vector>
 
 // gamestate constants
 enum GameState {
@@ -29,6 +30,16 @@ public:
 
     // sets the current GameState to the given state
     virtual void setGameState(GameState newState) = 0;
+    
+    // return the board, vector<vector<ITile *> *> *
+    virtual vector<vector<ITile *> *> * getBoard() = 0;
+    
+    // return the list of enemies, vector<IEnemy *> *
+    virtual vector<IEnemy *> * getEnemies() = 0;
+    
+    // return the lsit of towers, vector<ITower *> *
+    virtual vector<ITower *> * getTowers() = 0;
+    
     
 private:
     ITowerDefenseModel& operator=(const ITowerDefenseModel & other);
