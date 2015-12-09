@@ -27,7 +27,6 @@ SDL_Point * ITile::getRowColumn() {
 }
 
 SDL_Point * ITile::getPos() {
-    std::cout << this << std::endl;
     
     return pos;
 }
