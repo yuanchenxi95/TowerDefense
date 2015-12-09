@@ -10,7 +10,7 @@
 
 
 // initialize the EnemyTile with the given Point
-TowerTile::TowerTile(SDL_Point * p) : ITile(p) {
+TowerTile::TowerTile(int r, int c) : ITile(r, c) {
     towerTile = true;
     enemyTile = false;
     occupied = false;

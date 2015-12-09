@@ -10,11 +10,10 @@
 
 
 
-IEnemy::IEnemy(SDL_Point* p)  {
+IEnemy::IEnemy(int tx, int ty)  {
     
-    pos = new SDL_Point();
-    pos->x = p->x;
-    pos->y = p->y;
+    x = tx;
+    y = ty;
     
     counter = new Counter(&moveInterval);
     
@@ -34,23 +33,28 @@ IEnemy::~IEnemy() {
 }
 
 // move the enemy to the given position
-void IEnemy::move(SDL_Point *p) {
+void IEnemy::move(int tx, int ty) {
   
     // check whether it satisfies the requirement of moving
     if (goodToMove()) {
-        moveToThePoint(pos, p);
+        moveToThePoint(x, y, tx, ty);
     }
     
 }
 
 // set the rowColumn to the given point
-void IEnemy::setPosition(SDL_Point* p) {
-    pos = p;
+void IEnemy::setPosition(int tx, int ty) {
+    x = tx;
+    y = ty;
 }
 
 // get the position of enemy
-SDL_Point* IEnemy::getPos() {
-    return pos;
+int IEnemy::getX() {
+    return x;
+}
+
+int IEnemy::getY() {
+    return y;
 }
 
 // reduce Enemy's health by the given damage
@@ -107,21 +111,21 @@ bool IEnemy::goodToMove() {
 
 // move the first point to the second point. add unit distance to the direction.
 // if on the same spot, don't move
-void IEnemy::moveToThePoint(SDL_Point* p1, SDL_Point* p2) {
-    if (p2->x > p1->x) {
-        p1->x += 1;
+void IEnemy::moveToThePoint(int x1, int y1, int x2, int y2) {
+    if (x2 > x1) {
+        x1 += 1;
     }
     
-    if (p2->x < p1->x) {
-        p1->x -= 1;
+    if (x2 < x1) {
+        x1 -= 1;
     }
     
-    if (p2->y > p1->y) {
-        p1->y += 1;
+    if (y2 > y1) {
+        y1 += 1;
     }
     
-    if (p2->y < p1->y) {
-        p1->y -= 1;
+    if (y2 < y1) {
+        y1 -= 1;
     }
 }
 

@@ -15,7 +15,7 @@
 class GunTower : public ITower {
 public:
     // constructor
-    GunTower(SDL_Point*, Wave **);
+    GunTower(int, int, Wave **);
     
     // get the tower type of this tower
     TowerType getTowerType();

@@ -14,7 +14,7 @@
 
 class ExplosiveTower : ITower {
 public:
-    ExplosiveTower(SDL_Point*, Wave **);
+    ExplosiveTower(int x, int y, Wave **);
     
     // get the tower type of this tower
     TowerType getTowerType();

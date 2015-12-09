@@ -17,7 +17,7 @@
 class FreezeTower : public ITower {
 public:
     // constructor
-    FreezeTower(SDL_Point*, Wave **);
+    FreezeTower(int x, int y, Wave **);
     
     // get the tower type of this tower
     TowerType getTowerType();

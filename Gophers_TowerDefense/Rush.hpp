@@ -14,7 +14,7 @@
 
 class Rush : public IEnemy {
 public:
-    Rush(SDL_Point* p);
+    Rush(int x, int y);
     
     EnemyType getEnemyType();
 private:

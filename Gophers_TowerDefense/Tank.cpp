@@ -9,7 +9,7 @@
 #include "Tank.hpp"
 
 
-Tank::Tank(SDL_Point * p) : IEnemy(p) {
+Tank::Tank(int x, int y) : IEnemy(x, y) {
     
     moveInterval = 10;
     

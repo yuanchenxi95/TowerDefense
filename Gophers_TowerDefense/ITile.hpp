@@ -18,7 +18,7 @@ enum TileType {
 class ITile {
 public:
     
-    ITile(SDL_Point *);
+    ITile(int r, int c);
     // destructor
     virtual ~ITile() = 0;
     
@@ -26,10 +26,13 @@ public:
     // static ITile* create(SDL_Point p);
     
     // get the position of this tile
-    SDL_Point* getRowColumn();
+    int getRow();
+    
+    int getColumn();
     
     // get the position of this tile
-    SDL_Point* getPos();
+    int getX();
+    int getY();
     
     // get the Tile type of this tile
     virtual TileType getTileType() = 0;
@@ -44,10 +47,12 @@ protected:
     bool enemyTile;
     
     // the row and column of this tile
-    SDL_Point * rowColumn;
+    int row;
+    int column;
     
     // the position of this tile
-    SDL_Point * pos;
+    int posX;
+    int posY;
     
     
 private:

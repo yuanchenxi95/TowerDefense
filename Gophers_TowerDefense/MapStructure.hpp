@@ -31,7 +31,7 @@ public:
     
     EnemyPath * getEnemyPath();
     
-    vector<vector<ITile*>*> * getBoard();
+    vector<ITile*> * getBoard();
     
     
 private:
@@ -45,7 +45,10 @@ private:
     // set up the tower tiles
     void setUpTowerTiles();
     
-    vector<vector<ITile*> *> * board;
+    // is the given point in the enemyPathList
+    bool inList(int, int);
+    
+    vector<ITile *> * board;
     
     vector<SDL_Point*> * enemyPathList;
     

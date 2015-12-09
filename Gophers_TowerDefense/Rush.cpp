@@ -10,7 +10,7 @@
 
 
 
-Rush::Rush(SDL_Point * p) : IEnemy(p) {
+Rush::Rush(int x, int y) : IEnemy(x, y) {
     
     moveInterval = 10;
     

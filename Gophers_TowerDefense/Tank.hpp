@@ -14,7 +14,7 @@
 
 class Tank : public IEnemy {
 public:
-    Tank(SDL_Point* p);
+    Tank(int x, int y);
     
     EnemyType getEnemyType();
     

@@ -1,32 +1,32 @@
 #include "ITile.hpp"
 #include <iostream>
 
-ITile::ITile(SDL_Point * rc) {
-    rowColumn = new SDL_Point;
-    rowColumn->x = rc->x;
-    rowColumn->y = rc->y;
+ITile::ITile(int r, int c) {
+    row = r;
+    column = c;
     
-    pos = new SDL_Point();
-    
-    pos->x = rowColumn->x * TILE_SIZE + TILE_SIZE / 2;
-    pos->y = rowColumn->y * TILE_SIZE + TILE_SIZE / 2;
+    posX = row * TILE_SIZE + TILE_SIZE / 2;
+    posY = column * TILE_SIZE + TILE_SIZE / 2;
 }
 
 // destructor
 ITile::~ITile() {
-    delete rowColumn;
-    rowColumn = NULL;
-    
-    delete pos;
-    pos = NULL;
+
 }
 
 
-SDL_Point * ITile::getRowColumn() {
-    return rowColumn;
+int ITile::getRow() {
+    return row;
 }
 
-SDL_Point * ITile::getPos() {
-    
-    return pos;
+int ITile::getColumn() {
+    return column;
+}
+
+int ITile::getX() {
+    return posX;
+}
+
+int ITile::getY() {
+    return posY;
 }
