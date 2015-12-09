@@ -29,7 +29,7 @@ public:
     ~MapStructure();
     
     
-    EnemyPath getEnemyPath();
+    EnemyPath * getEnemyPath();
     
     vector<vector<ITile*>*> * getBoard();
     

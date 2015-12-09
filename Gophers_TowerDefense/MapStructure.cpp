@@ -51,6 +51,10 @@ MapStructure::~MapStructure() {
     
 }
 
+EnemyPath* MapStructure::getEnemyPath() {
+    return enemyPath;
+}
+
 vector<vector<ITile*>*> * MapStructure::getBoard() {
     return board;
 }

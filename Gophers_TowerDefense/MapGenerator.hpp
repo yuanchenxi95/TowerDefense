@@ -18,7 +18,7 @@ public:
     MapGenerator();
     ~MapGenerator();
     
-    MapStructure getMapOne();
+    MapStructure* getMapOne();
     
 private:
     void putETP(int x, int y);

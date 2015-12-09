@@ -17,7 +17,7 @@ MapGenerator::~MapGenerator() {
     loETP = NULL;
 }
 
-MapStructure MapGenerator::getMapOne() {
+MapStructure * MapGenerator::getMapOne() {
     resetTheList();
     
     putETP(0, 1);
@@ -92,7 +92,7 @@ MapStructure MapGenerator::getMapOne() {
      
      */
     
-    return *new MapStructure(loETP, 15, 10);
+    return new MapStructure(loETP, 15, 10);
     
     
     
