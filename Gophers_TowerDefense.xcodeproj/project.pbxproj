@@ -69,6 +69,10 @@
 		129615B91C17CF9200B0A9C1 /* Soldier.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Soldier.hpp; sourceTree = "<group>"; };
 		129615BB1C17D63500B0A9C1 /* TowerManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TowerManager.cpp; sourceTree = "<group>"; };
 		129615BC1C17D63500B0A9C1 /* TowerManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TowerManager.hpp; sourceTree = "<group>"; };
+		129615BE1C18051800B0A9C1 /* background.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = background.bmp; sourceTree = "<group>"; };
+		129615BF1C18051800B0A9C1 /* turtleFastSprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = turtleFastSprite.png; sourceTree = "<group>"; };
+		129615C01C18051800B0A9C1 /* turtleNormalSprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = turtleNormalSprite.png; sourceTree = "<group>"; };
+		129615C11C18051800B0A9C1 /* turtleTankSprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = turtleTankSprite.png; sourceTree = "<group>"; };
 		1299A77E1C13ABFA00D4E8A5 /* FreezeTower.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FreezeTower.cpp; sourceTree = "<group>"; };
 		1299A77F1C13ABFA00D4E8A5 /* FreezeTower.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FreezeTower.hpp; sourceTree = "<group>"; };
 		1299A7821C13DF7A00D4E8A5 /* ExplosiveTower.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ExplosiveTower.cpp; sourceTree = "<group>"; };
@@ -92,7 +96,6 @@
 		6F3E5B541C1108C00058D38C /* Gophers_TowerDefense */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Gophers_TowerDefense; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F3E5B571C1108C00058D38C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		6F3E5B5E1C1108F30058D38C /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../../../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
-		6F3E5B601C1109DC0058D38C /* background.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = background.bmp; sourceTree = "<group>"; };
 		6F4574DE1C112463008E3164 /* ITile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ITile.cpp; sourceTree = "<group>"; };
 		6F4574DF1C112463008E3164 /* ITile.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ITile.hpp; sourceTree = "<group>"; };
 		6F4574E31C1126C1008E3164 /* ITowerDefenseView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ITowerDefenseView.cpp; sourceTree = "<group>"; };
@@ -108,9 +111,6 @@
 		6F6387101C111D2E00A9CD18 /* GophersTowerDefenseModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GophersTowerDefenseModel.cpp; sourceTree = "<group>"; };
 		6F6387111C111D2E00A9CD18 /* GophersTowerDefenseModel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GophersTowerDefenseModel.hpp; sourceTree = "<group>"; };
 		6FD5E17D1C17EA8E00652A70 /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../../../../../../../../Library/Frameworks/SDL2_image.framework; sourceTree = "<group>"; };
-		6FD5E17F1C18028E00652A70 /* turtleTankSprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = turtleTankSprite.png; sourceTree = "<group>"; };
-		6FD5E1801C18028E00652A70 /* turtleNormalSprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = turtleNormalSprite.png; sourceTree = "<group>"; };
-		6FD5E1811C18028E00652A70 /* turtleFastSprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = turtleFastSprite.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,8 +225,10 @@
 		6F3E5B561C1108C00058D38C /* Gophers_TowerDefense */ = {
 			isa = PBXGroup;
 			children = (
-				6FD5E1821C18029400652A70 /* src */,
-				6F3E5B601C1109DC0058D38C /* background.bmp */,
+				129615BE1C18051800B0A9C1 /* background.bmp */,
+				129615BF1C18051800B0A9C1 /* turtleFastSprite.png */,
+				129615C01C18051800B0A9C1 /* turtleNormalSprite.png */,
+				129615C11C18051800B0A9C1 /* turtleTankSprite.png */,
 				6F3E5B571C1108C00058D38C /* main.cpp */,
 				6F4574E21C1126A4008E3164 /* TD_View */,
 				6F4574E11C112549008E3164 /* TD_Model */,
@@ -276,16 +278,6 @@
 				6F6387061C1118E800A9CD18 /* Controller.hpp */,
 			);
 			name = TD_Controller;
-			sourceTree = "<group>";
-		};
-		6FD5E1821C18029400652A70 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				6FD5E17F1C18028E00652A70 /* turtleTankSprite.png */,
-				6FD5E1801C18028E00652A70 /* turtleNormalSprite.png */,
-				6FD5E1811C18028E00652A70 /* turtleFastSprite.png */,
-			);
-			name = src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

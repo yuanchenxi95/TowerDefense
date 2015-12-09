@@ -35,6 +35,7 @@ int WaveManager::tickAndMove() {
     if (allEnemiesDead()) {
         wave = createNewWave();
     }
+    delete wave;
     
     return (*wavePointer)->move();
 }
@@ -57,6 +58,7 @@ bool WaveManager::allEnemiesDead() {
 
 // create new Wave
 Wave* WaveManager::createNewWave() {
+    
     vector<IEnemy*> * loe = new vector<IEnemy*>();
     
     SDL_Point * startPos = ep->getStart()->getPos();
