@@ -15,6 +15,8 @@ Wave::Wave(EnemyPath * tep, vector<IEnemy *> * tloe) {
     //spawn every minion in 2000 milliseconds
     spawnCounter = new Counter(new int(2000));
     
+    tileOfEnemy = new map<IEnemy*, EnemyTile*>();
+    
     for (IEnemy * e : *loe) {
         tileOfEnemy->insert(make_pair(e, tep->getStart()));
 

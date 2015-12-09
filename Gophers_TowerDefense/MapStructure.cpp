@@ -10,12 +10,14 @@
 
 
 
-MapStructure::MapStructure(vector<SDL_Point*> * epl, int cl, int ro) {
+MapStructure::MapStructure(vector<SDL_Point*> * epl, int ro, int cl) {
     
     
     row = ro;
     column = cl;
     enemyPathList = epl;
+    
+    loET = new vector<EnemyTile*>();
     
     initializeBoard();
     setUpEnemyPath();
@@ -47,7 +49,7 @@ MapStructure::~MapStructure() {
     
     // delete enemypath
     delete enemyPath;
-
+    
     
 }
 
@@ -62,29 +64,38 @@ vector<vector<ITile*>*> * MapStructure::getBoard() {
 
 // allocate the space of the board.
 void MapStructure::initializeBoard() {
-    board = new vector<vector<ITile*>*>(column);
     
-    for(int i = 0; i < column; i++) {
-        board->push_back(new vector<ITile*>(row));
-    }
+    SDL_Point * p = new SDL_Point();
+    p->x = 0;
+    p->y = 0;
+    
+    ITile * itc = new TowerTile(p);
+    
+    vector<ITile*> * vc = new vector<ITile*>(column, itc);
+    
+    board = new vector<vector<ITile*>*>(row, vc);
+
     
 }
 
 // set up the enemy tiles and the enemy path
 void MapStructure::setUpEnemyPath() {
     
-    vector<EnemyTile*> * loET = new vector<EnemyTile*>(enemyPathList->size());
     
     for (SDL_Point * p: *enemyPathList) {
         // check enemyPathList
-        if (p->y >= row && p->y < 0 && p->x >= column && p->x < 0) {
+        if (p->x >= row && p->x < 0 && p->y >= column && p->y < 0) {
             cerr << " Illegal coordinate for Enemy Tower" << endl;
         }
+        
         
         EnemyTile * et = new EnemyTile(p);
         
         // change the correspond TowerTile to EnemyTile
-        (*(*board)[p->x])[p->y] = et;
+        //(*(*board)[p->x])[p->y] = et;
+        
+        
+        board->at(p->x)->at(p->y) = et;
         
         loET->push_back(et);
     }
@@ -110,7 +121,7 @@ void MapStructure::setUpTowerTiles() {
                 
                 //board->at(i)->push_back(new TowerTile(p));
                 (*(*board)[i])[j] = new TowerTile(p);
-            
+                
             }
         }
     }

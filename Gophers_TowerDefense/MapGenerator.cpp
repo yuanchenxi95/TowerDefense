@@ -100,7 +100,7 @@ MapStructure * MapGenerator::getMapOne() {
 }
 
 void MapGenerator::putETP(int x, int y) {
-    SDL_Point * p;
+    SDL_Point * p = new SDL_Point();
     p->x = x;
     p->y = y;
     loETP->push_back(p);

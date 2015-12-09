@@ -13,7 +13,7 @@ WaveManager::WaveManager(EnemyPath * tep) {
     ep = tep;
     spawnEnemy = false;
     
-    *wavePointer = wave;
+    wavePointer = & wave;
     
     wave = createNewWave();
 }
@@ -25,6 +25,8 @@ WaveManager::~WaveManager() {
     *wavePointer = NULL;
     delete wavePointer;
     wavePointer = NULL;
+    
+    delete ep;
     
 }
 
@@ -55,7 +57,7 @@ bool WaveManager::allEnemiesDead() {
 
 // create new Wave
 Wave* WaveManager::createNewWave() {
-    vector<IEnemy*> * loe;
+    vector<IEnemy*> * loe = new vector<IEnemy*>();
     
     SDL_Point * startPos = ep->getStart()->getPos();
     

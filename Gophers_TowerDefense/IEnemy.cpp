@@ -12,6 +12,7 @@
 
 IEnemy::IEnemy(SDL_Point* p)  {
     
+    pos = new SDL_Point();
     pos->x = p->x;
     pos->y = p->y;
     

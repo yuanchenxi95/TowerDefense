@@ -26,7 +26,7 @@ public:
     //get the start tile of this path
     EnemyTile * getStart();
     
-
+    
     
     // get the end tile of this path
     EnemyTile * getEnd();
