@@ -36,7 +36,6 @@ public:
     // return the lsit of towers, vector<ITower *> *
     virtual vector<ITower *> * getTowers();
     
-    
     // tick the world
     virtual void tick();
     

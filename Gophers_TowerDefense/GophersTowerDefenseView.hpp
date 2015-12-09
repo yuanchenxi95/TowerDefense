@@ -3,6 +3,7 @@
 
 #include "ITowerDefenseView.hpp"
 #include "ITowerDefenseModel.hpp"
+#include "ITile.hpp"
 #include <SDL2/SDL.h>
 #include <SDL2_image/SDL_image.h>
 #include <iostream>
@@ -14,7 +15,7 @@ class GophersTowerDefenseView: public ITowerDefenseView {
 public:
   
   // constructor
-  GophersTowerDefenseView(const ITowerDefenseModel & model);
+  GophersTowerDefenseView(ITowerDefenseModel & model);
   
   // destructor
   virtual ~GophersTowerDefenseView();
@@ -23,10 +24,12 @@ public:
   virtual void render();
   
 private:
-  const ITowerDefenseModel * tdModel;
+  ITowerDefenseModel * tdModel;
   
-  const int WINDOW_WIDTH = 1200;           // constant window width
-  const int WINDOW_HEIGHT = 650;           // constant window height
+  int WINDOW_WIDTH = 1200;           // changable window width
+  int WINDOW_HEIGHT = 650;           // changable window height
+  
+  int cellSize = 100;
   
   // window renderer
   SDL_Renderer * renderer = NULL;
