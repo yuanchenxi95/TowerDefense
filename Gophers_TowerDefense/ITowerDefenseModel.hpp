@@ -24,20 +24,11 @@ public:
     // destructor
     virtual ~ITowerDefenseModel() = 0;
     
-//    // returns the board tiles of this model
-//    virtual ITile** getBoardTiles() = 0;
-//    
-//    // returns the current GameState of the model
-//    virtual GameState getGameState() = 0;
-//    
-//    // sets the current GameState to the given state
-//    virtual void setGameState(GameState newState) = 0;
-//    
-//    // test toggle show background, (testing only temporary)
-//    virtual void toggleShowBackground() = 0;
-//    
-//    // test return show background, (testing only temporary)
-//    virtual bool isShowingBackground() const = 0;
+    // returns the current GameState of the model
+    virtual GameState getGameState() = 0;
+
+    // sets the current GameState to the given state
+    virtual void setGameState(GameState newState) = 0;
     
 private:
     ITowerDefenseModel& operator=(const ITowerDefenseModel & other);

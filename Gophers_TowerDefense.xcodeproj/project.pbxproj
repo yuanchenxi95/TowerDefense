@@ -108,6 +108,9 @@
 		6F6387101C111D2E00A9CD18 /* GophersTowerDefenseModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GophersTowerDefenseModel.cpp; sourceTree = "<group>"; };
 		6F6387111C111D2E00A9CD18 /* GophersTowerDefenseModel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GophersTowerDefenseModel.hpp; sourceTree = "<group>"; };
 		6FD5E17D1C17EA8E00652A70 /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../../../../../../../../Library/Frameworks/SDL2_image.framework; sourceTree = "<group>"; };
+		6FD5E17F1C18028E00652A70 /* turtleTankSprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = turtleTankSprite.png; sourceTree = "<group>"; };
+		6FD5E1801C18028E00652A70 /* turtleNormalSprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = turtleNormalSprite.png; sourceTree = "<group>"; };
+		6FD5E1811C18028E00652A70 /* turtleFastSprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = turtleFastSprite.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +225,7 @@
 		6F3E5B561C1108C00058D38C /* Gophers_TowerDefense */ = {
 			isa = PBXGroup;
 			children = (
+				6FD5E1821C18029400652A70 /* src */,
 				6F3E5B601C1109DC0058D38C /* background.bmp */,
 				6F3E5B571C1108C00058D38C /* main.cpp */,
 				6F4574E21C1126A4008E3164 /* TD_View */,
@@ -272,6 +276,16 @@
 				6F6387061C1118E800A9CD18 /* Controller.hpp */,
 			);
 			name = TD_Controller;
+			sourceTree = "<group>";
+		};
+		6FD5E1821C18029400652A70 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				6FD5E17F1C18028E00652A70 /* turtleTankSprite.png */,
+				6FD5E1801C18028E00652A70 /* turtleNormalSprite.png */,
+				6FD5E1811C18028E00652A70 /* turtleFastSprite.png */,
+			);
+			name = src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -29,19 +29,6 @@ public:
     // sets the current GameState to the given state
     virtual void setGameState(GameState newState);
     
-    // testing only:
-    virtual void toggleShowBackground();
-    
-    // testing only:
-    virtual bool isShowingBackground() const;
-    
-    // only for testing
-    bool isShowBK = true;
-    
-    // returns the board tiles of this model
-    virtual ITile** getBoardTiles();
-    // TODO more methods
-    
     // tick the world
     void tick();
     
