@@ -64,6 +64,8 @@ private:
     TowerManager * towerManager;
     
     
+    
+    
     // the tower projectiles field
     // TODO
     
