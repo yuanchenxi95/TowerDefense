@@ -7,6 +7,7 @@ GophersTowerDefenseModel::GophersTowerDefenseModel() {
     
     mapStructure = mapGenerator->getMapOne();
     
+    
     waveManager = new WaveManager(mapStructure->getEnemyPath());
     
     towerManager = new TowerManager();

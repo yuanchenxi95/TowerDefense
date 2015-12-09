@@ -21,11 +21,11 @@ using namespace std;
 
 
 // INVARIANT:
-// y represents row, x represents column
+// x represents row, y represents column
 
 class MapStructure {
 public:
-    MapStructure(vector<SDL_Point*> * epl, int cl, int ro);
+    MapStructure(vector<SDL_Point*> * epl, int ro, int cl);
     ~MapStructure();
     
     
@@ -48,6 +48,8 @@ private:
     vector<vector<ITile*> *> * board;
     
     vector<SDL_Point*> * enemyPathList;
+    
+    vector<EnemyTile*> * loET;
     
     EnemyPath * enemyPath;
     

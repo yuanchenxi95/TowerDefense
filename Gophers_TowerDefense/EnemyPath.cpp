@@ -17,6 +17,7 @@ EnemyPath::EnemyPath(vector<EnemyTile*> * loET) {
     start = loET->at(0);
     end = loET->at(loET->size() - 1);
     
+    epMap = new map<EnemyTile *, EnemyTile*>();
     
     for (int i = 0; i < loET->size() - 1; i++) {
         epMap->insert(make_pair(loET->at(i), loET->at(i + 1)));
@@ -32,6 +33,8 @@ EnemyPath::~EnemyPath() {
     start = NULL;
     
     end = NULL;
+    
+    
 }
 
 
