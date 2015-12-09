@@ -12,8 +12,8 @@
 #include <stdio.h>
 #include "IEnemy.hpp"
 #include "EnemyTile.hpp"
+#include "EnemyPath.hpp"
 #include <vector>
-#include "MapStructure.hpp"
 #include "Counter.hpp"
 #include <iostream>
 
@@ -25,14 +25,12 @@ public:
     Wave(EnemyPath *, vector<IEnemy *> *);
     ~Wave();
     
-    // tick all the enemies' counters and spawnCounter
+    // tick and move the wave.
     void tick();
     
     // return ture if there is an enemy to be spawned
     bool anyEnemyToSpawn();
     
-    // move and spawn the enemy, return how many enemies reach the end
-    int move();
     
     // update enemy list, remove the dead enemies
     void updateList();
@@ -43,6 +41,8 @@ public:
     // get the enemy list
     vector<IEnemy *> * getEnemies();
     
+    // move and spawn the enemy, return how many enemies reach the end
+    int move();
     
     
     

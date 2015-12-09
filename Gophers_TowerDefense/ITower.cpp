@@ -10,11 +10,11 @@
 #include <iostream>
 
 
-ITower::ITower(SDL_Point* p, Wave * w) {
+ITower::ITower(SDL_Point* p, Wave ** w) {
     
     pos = p;
     
-    enemies = w->getEnemies();
+    wavePointer = w;
     
     counter = new Counter(&attackDelay);
     
@@ -47,7 +47,9 @@ void ITower::tick() {
 
 
 // attack
-void ITower::attack(vector<IEnemy*> * enemies) {
+void ITower::attack() {
+    vector<IEnemy*> * enemies = (*wavePointer)->getEnemies();
+    
     // stop the method if it is not good to attack
     if (goodToAttack()) {
         
@@ -62,16 +64,6 @@ void ITower::attack(vector<IEnemy*> * enemies) {
 bool ITower::goodToAttack() {
     
     return counter->isCoolDown() && anyEnemyInRange();
-    
-//    // get current time
-//    gettimeofday(&timeStruct, NULL);
-//    long long curTime = timeStruct.tv_sec * 1000 + timeStruct.tv_sec / 1000;
-//    
-//    // convert attack delay to milliseconds
-//    long long attackDelayTime = attackDelay * 1000;
-//    
-//    // if it has been attackDelay amount of time since the last attack, otherwise hold off
-//    return curTime - lastAttackTime >= attackDelayTime;
     
 }
 
@@ -88,7 +80,7 @@ bool ITower::inRange(IEnemy * ene) {
 
 // is there any enemy in range
 bool ITower::anyEnemyInRange() {
-    for (IEnemy * e : *enemies) {
+    for (IEnemy * e : *getEnemies()) {
         if (inRange(e)) {
             return true;
         }
@@ -115,6 +107,10 @@ double ITower::calcDistance(SDL_Point * a, SDL_Point * b) {
     return sqrt(pow(a->y - b->y, 2) + pow(a->x - b->x, 2));
 }
 
+
+vector<IEnemy *> * ITower::getEnemies() {
+    return (*wavePointer)->getEnemies();
+}
 
 
 

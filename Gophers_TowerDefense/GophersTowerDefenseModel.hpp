@@ -3,6 +3,13 @@
 
 #include <stdio.h>
 #include "ITowerDefenseModel.hpp"
+#include "Mapstructure.hpp"
+#include "Mapgenerator.hpp"
+#include "WaveManager.hpp"
+#include "TowerManager.hpp"
+
+
+
 
 /*
  * Gophers tower defence model class, a subclass of the ITowerDefenseModel
@@ -41,14 +48,16 @@ private:
   GameState gameState = MENU;         // game loop flag
   
   
-  // the board tiles field
-  // TODO
+  // the mapStructure
+    MapStructure * mapStruct;
   
-  // the enemy waves field
-  // TODO
   
-  // the tower list field
-  // TODO
+  // the wave manager
+    WaveManager * waveManager;
+  
+  // the tower manager
+    TowerManager * towerManager;
+    
   
   // the tower projectiles field
   // TODO

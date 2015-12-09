@@ -24,7 +24,7 @@ TowerTile::~TowerTile() {
 }
 
 // get the Tile type of this tile
-TileType getTileType() {
+TileType TowerTile::getTileType() {
     return TOWERTILE;
 }
 

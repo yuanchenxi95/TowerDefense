@@ -31,10 +31,10 @@ enum TowerType {
 
 class ITower {
 public:
-    ITower(SDL_Point*, Wave*);
+    ITower(SDL_Point*, Wave**);
     ~ITower();
     
-    void attack(vector<IEnemy*> *); // fuction to begin attacking
+    void attack(); // fuction to begin attacking
     
     // get the position of this tower
     SDL_Point* getPos();
@@ -74,7 +74,9 @@ private:
     // give two SDL_Points, calculate their distance
     double calcDistance(SDL_Point*, SDL_Point*);
     
-    vector<IEnemy *> * enemies;
+    vector<IEnemy *> * getEnemies();
+    
+    Wave ** wavePointer;
     
     bool inRange(IEnemy *);
     bool anyEnemyInRange();

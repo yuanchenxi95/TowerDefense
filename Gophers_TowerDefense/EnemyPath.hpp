@@ -10,12 +10,11 @@
 #define EnemyPath_hpp
 
 #include <stdio.h>
-#include "ITile.hpp"
 #include "EnemyTile.hpp"
-#include "TowerTile.hpp"
 #include <map>
 #include <vector>
 #include "SDL2/SDL.h"
+#include <iostream>
 
 using namespace std;
 
@@ -26,6 +25,8 @@ public:
     
     //get the start tile of this path
     EnemyTile * getStart();
+    
+
     
     // get the end tile of this path
     EnemyTile * getEnd();
