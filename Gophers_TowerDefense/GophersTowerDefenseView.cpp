@@ -69,6 +69,10 @@ void GophersTowerDefenseView::render() {
   // Render to screen
   int size = 10;
   currentpos++;
+  
+  tdModel->
+  
+  
   for (int i = 0; i < 10; ++i) {
     SDL_Rect rendersize;
     rendersize.x = i * size + currentpos;
