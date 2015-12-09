@@ -16,6 +16,12 @@
 #include <map>
 #include "counter.hpp"
 
+enum EnemyType {
+    RUSH,
+    TANK,
+    SOLDIER
+};
+
 class IEnemy {
 public:
     
@@ -38,6 +44,8 @@ public:
     void setOnBoard(bool); // set the onBoard to the given boolean
     
     void tick();// tick this enemy's counters
+    
+    virtual EnemyType getEnemyType() = 0;
 
     
 protected:

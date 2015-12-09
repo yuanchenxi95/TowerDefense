@@ -23,14 +23,9 @@ TowerTile::~TowerTile() {
     tower = NULL;
 }
 
-// whether this tile is a TowerTile
-bool TowerTile::isTowerTile() {
-    return towerTile;
-}
-
-// whether this tile is an enmemy path
-bool TowerTile::isEnemyTile() {
-    return enemyTile;
+// get the Tile type of this tile
+TileType getTileType() {
+    return TOWERTILE;
 }
 
 

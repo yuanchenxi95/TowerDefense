@@ -19,13 +19,9 @@ public:
     
     // deconstructor
     ~EnemyTile();
-    
-    // whether this tile is a TowerTile
-    bool isTowerTile();
-    
-    // whether this tile is an enmemy path
-    bool isEnemyTile();
 
+    // get the Tile type of this tile
+    TileType getTileType();
     
     
 protected:

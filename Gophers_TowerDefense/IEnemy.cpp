@@ -9,6 +9,7 @@
 #include "IEnemy.hpp"
 
 
+
 IEnemy::IEnemy(SDL_Point* p)  {
     
     pos->x = p->x;

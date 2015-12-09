@@ -10,6 +10,11 @@
 
 #include "SDL2/SDL.h"
 
+enum TileType {
+    ENEMYTILE,
+    TOWERTILE
+};
+
 class ITile {
 public:
     
@@ -20,17 +25,14 @@ public:
     
     // static ITile* create(SDL_Point p);
     
-    // whether this tile is a TowerTile
-    virtual bool isTowerTile() = 0;
-    
-    // whether this tile is an enmemy path
-    virtual bool isEnemyTile() = 0;
-    
     // get the position of this tile
     SDL_Point* getRowColumn();
     
     // get the position of this tile
     SDL_Point* getPos();
+    
+    // get the Tile type of this tile
+    virtual TileType getTileType() = 0;
     
     // The size of this tile
     static const int TILE_SIZE = 100;

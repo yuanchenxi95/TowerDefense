@@ -23,12 +23,8 @@ EnemyTile::~EnemyTile() {
 }
 
 
-// whether this tile is a TowerTile
-bool EnemyTile::isTowerTile() {
-    return towerTile;
-}
 
-// whether this tile is an enmemy path
-bool EnemyTile::isEnemyTile() {
-    return enemyTile;
+// get the Tile type of this tile
+TileType EnemyTile::getTileType() {
+    return ENEMYTILE;
 }
