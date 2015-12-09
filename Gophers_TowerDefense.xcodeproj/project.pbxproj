@@ -24,8 +24,6 @@
 		12ACCB611C12CAEF002700C3 /* IEnemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12ACCB5F1C12CAEF002700C3 /* IEnemy.cpp */; };
 		12CC2A361C16BA0000A987FC /* Wave.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12CC2A341C16BA0000A987FC /* Wave.cpp */; };
 		12CC2A391C16BF9200A987FC /* Counter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12CC2A371C16BF9200A987FC /* Counter.cpp */; };
-		12DB9DDF1C136B01001CDD4F /* HealthBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12DB9DDD1C136B01001CDD4F /* HealthBar.cpp */; };
-		12DB9DE21C136B47001CDD4F /* Object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12DB9DE01C136B47001CDD4F /* Object.cpp */; };
 		6F3E5B581C1108C00058D38C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F3E5B571C1108C00058D38C /* main.cpp */; };
 		6F3E5B5F1C1108F30058D38C /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F3E5B5E1C1108F30058D38C /* SDL2.framework */; };
 		6F4574E01C112463008E3164 /* ITile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F4574DE1C112463008E3164 /* ITile.cpp */; };
@@ -89,10 +87,6 @@
 		12CC2A351C16BA0000A987FC /* Wave.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Wave.hpp; sourceTree = "<group>"; };
 		12CC2A371C16BF9200A987FC /* Counter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Counter.cpp; sourceTree = "<group>"; };
 		12CC2A381C16BF9200A987FC /* Counter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Counter.hpp; sourceTree = "<group>"; };
-		12DB9DDD1C136B01001CDD4F /* HealthBar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HealthBar.cpp; sourceTree = "<group>"; };
-		12DB9DDE1C136B01001CDD4F /* HealthBar.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HealthBar.hpp; sourceTree = "<group>"; };
-		12DB9DE01C136B47001CDD4F /* Object.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Object.cpp; sourceTree = "<group>"; };
-		12DB9DE11C136B47001CDD4F /* Object.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Object.hpp; sourceTree = "<group>"; };
 		6F3E5B541C1108C00058D38C /* Gophers_TowerDefense */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Gophers_TowerDefense; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F3E5B571C1108C00058D38C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		6F3E5B5E1C1108F30058D38C /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../../../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
@@ -249,8 +243,6 @@
 				6F63870E1C111B2800A9CD18 /* ITowerDefenseModel.hpp */,
 				6F6387101C111D2E00A9CD18 /* GophersTowerDefenseModel.cpp */,
 				6F6387111C111D2E00A9CD18 /* GophersTowerDefenseModel.hpp */,
-				12DB9DE01C136B47001CDD4F /* Object.cpp */,
-				12DB9DE11C136B47001CDD4F /* Object.hpp */,
 				12CC2A3A1C16BF9A00A987FC /* Time */,
 			);
 			name = TD_Model;
@@ -263,8 +255,6 @@
 				6F4574E41C1126C1008E3164 /* ITowerDefenseView.hpp */,
 				6F4574E61C112764008E3164 /* GophersTowerDefenseView.cpp */,
 				6F4574E71C112764008E3164 /* GophersTowerDefenseView.hpp */,
-				12DB9DDD1C136B01001CDD4F /* HealthBar.cpp */,
-				12DB9DDE1C136B01001CDD4F /* HealthBar.hpp */,
 			);
 			name = TD_View;
 			sourceTree = "<group>";
@@ -344,9 +334,7 @@
 				6F4574E01C112463008E3164 /* ITile.cpp in Sources */,
 				129615BA1C17CF9200B0A9C1 /* Soldier.cpp in Sources */,
 				1296159D1C16DBF200B0A9C1 /* EnemyPath.cpp in Sources */,
-				12DB9DDF1C136B01001CDD4F /* HealthBar.cpp in Sources */,
 				129615B11C17C6E000B0A9C1 /* WaveManager.cpp in Sources */,
-				12DB9DE21C136B47001CDD4F /* Object.cpp in Sources */,
 				6F4574E81C112764008E3164 /* GophersTowerDefenseView.cpp in Sources */,
 				129615BD1C17D63500B0A9C1 /* TowerManager.cpp in Sources */,
 				12ACCB5D1C128E4F002700C3 /* ITower.cpp in Sources */,

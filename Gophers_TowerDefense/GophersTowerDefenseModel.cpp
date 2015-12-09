@@ -13,7 +13,8 @@ GophersTowerDefenseModel::GophersTowerDefenseModel() {
     towerManager = new TowerManager();
     
     
-    
+    health = 10;
+    money = 9999;
     
 }
 
@@ -52,6 +53,18 @@ vector<IEnemy *> * GophersTowerDefenseModel::getEnemies() {
 vector<ITower *> * GophersTowerDefenseModel::getTowers() {
     return towerManager->getTowerList();
 }
+
+
+// return the current health
+int GophersTowerDefenseModel::getHealth() {
+    return health;
+}
+
+// return the current money
+int GophersTowerDefenseModel::getMoney() {
+    return money;
+}
+
 
 
 
