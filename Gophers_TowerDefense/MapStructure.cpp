@@ -109,4 +109,18 @@ bool MapStructure::inList(int x, int y) {
 }
 
 
+// get the tile of correspondent row and column
+ITile * MapStructure::getTile(int r, int c) {
+    if (r < 0 || r >= row || c < 0 || c >= column) {
+        cerr << "Illegal argument for row and column" << endl;
+    } else {
+        for (ITile * t : *board) {
+            if (t->getColumn() == c && t->getRow() == r) {
+                return t;
+            }
+        }
+    }
+    return NULL;
+}
+
 

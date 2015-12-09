@@ -33,6 +33,9 @@ public:
     
     vector<ITile*> * getBoard();
     
+    // get the tile of correspondent row and column
+    ITile * getTile(int r, int c);
+    
     
 private:
     

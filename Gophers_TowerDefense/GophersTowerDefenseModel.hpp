@@ -45,10 +45,13 @@ public:
     // return the current money
     virtual int getMoney();
     
+    // build the tower, return ture if success
+    virtual bool buildTower(int r, int c, TowerType);
+    
     
 private:
     
-    GameState gameState = MENU;         // game loop flag
+    GameState gameState = PLAYING;         // game loop flag
     
     // the mapGenerator
     MapGenerator * mapGenerator;

@@ -12,10 +12,10 @@
 
 Rush::Rush(int x, int y) : IEnemy(x, y) {
     
-    moveInterval = 1;
+    moveInterval = 2;
     
-    health = 2000;
-    maxHealth = 2000;
+    health = 500;
+    maxHealth = 500;
     
 }
 

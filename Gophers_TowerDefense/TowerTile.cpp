@@ -35,9 +35,9 @@ bool TowerTile::isOccupied() {
 }
 
 // void build the Tower
-void TowerTile::buildTower(ITower & t) {
+void TowerTile::buildTower(ITower * t) {
     if (!isOccupied()) {
-        tower = &t;
+        tower = t;
         occupied = true;
     }
 }

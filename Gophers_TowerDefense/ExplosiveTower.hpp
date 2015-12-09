@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include "ITower.hpp"
 
-class ExplosiveTower : ITower {
+class ExplosiveTower : public ITower {
 public:
     ExplosiveTower(int x, int y, Wave **);
     

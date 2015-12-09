@@ -9,7 +9,7 @@
 #include "Counter.hpp"
 
 
-Counter::Counter(int* coolDown) {
+Counter::Counter(int *coolDown) {
     if (coolDown < 0) {
         std::cerr << "counter should not be negative" << std::endl;
     }
@@ -21,7 +21,6 @@ Counter::Counter(int* coolDown) {
 }
 
 Counter::~Counter() {
-    // don't delete coolDownTime
     coolDownTime = NULL;
 }
 
@@ -35,10 +34,14 @@ void Counter::reset() {
     counter = *coolDownTime;
 }
 
-int Counter::getCounter() {
-    return counter;
+int* Counter::getCounter() {
+    return coolDownTime;
 }
 
 bool Counter::isCoolDown() {
     return counter == 0;
+}
+
+void Counter::set(int* i) {
+    coolDownTime = i;
 }

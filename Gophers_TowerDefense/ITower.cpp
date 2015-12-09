@@ -10,11 +10,13 @@
 #include <iostream>
 
 
-ITower::ITower(int tx, int ty, Wave ** w) {
+ITower::ITower(int r, int c, Wave ** w) {
     
-    x = tx;
-    y = ty;
+    row = r;
+    column = c;
     
+    posX = row * 60 + 60 / 2;
+    posY = column * 60 + 60 / 2;
     wavePointer = w;
     
     counter = new Counter(&attackDelay);
@@ -31,11 +33,11 @@ ITower::~ITower() {
 
 // get the position of this tower
 int ITower::getX() {
-    return x;
+    return posX;
 }
 
 int ITower::getY() {
-    return y;
+    return posY;
 }
 
 
@@ -43,6 +45,11 @@ int ITower::getY() {
 // get the range of this tower
 int ITower::getRange() {
     return range;
+}
+
+// get cost
+int ITower::getCost() {
+    return cost;
 }
 
 // tick the counter

@@ -110,6 +110,29 @@ void GophersTowerDefenseView::render() {
         }
     }
     
+    for (ITower * tower : *tdModel->getTowers()) {
+        SDL_Rect outlineRect =
+        // y is column number, x is row number
+        {tower->getX(), tower->getY(), cellSize, cellSize};
+        //    std::cout << tile->getColumn() << std::endl;
+        switch (tower->getTowerType()) {
+            case GUNTOWER:
+                SDL_SetRenderDrawColor(renderer, 0, 255, 0, 0x00);
+                break;
+            case FREEZETOWER:
+                SDL_SetRenderDrawColor(renderer, 0, 0, 255, 0x00);
+                break;
+            case EXPLOSIVETOWER:
+                SDL_SetRenderDrawColor(renderer, 255, 0, 0, 0x00);
+                break;
+        }
+        
+        SDL_RenderFillRect(renderer, &outlineRect);
+        
+        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 0x00);
+        SDL_RenderDrawRect(renderer, &outlineRect);
+    }
+    
     // Update
     SDL_RenderPresent(renderer);
 }

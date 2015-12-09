@@ -12,11 +12,11 @@
 // slow down enemy
 FreezeTower::FreezeTower(int x, int y, Wave ** w) : ITower(x, y, w) {
     // initilizes fields
-    // deal 100 damage per attack, range is 100, delay is 3000 milliseconds.
+    // deal 100 damage per attack, range is 100, delay is 300 milliseconds.
     
     damage = 20;
-    attackDelay = 1000;
-    range = 150;
+    attackDelay = 100;
+    range = 200;
     cost = 100;
 
     
@@ -26,16 +26,16 @@ void FreezeTower::attackHelp(vector<IEnemy*> * enemies){
 
     if (enemies->size() > 0) {
         (*enemies)[0]->takeDamage(damage);
+        freezeEnemy((*enemies)[0]);
+        
     }
     
 }
 
 void FreezeTower::freezeEnemy(IEnemy * ene) {
-    
-    int currentMoveInterval = ene->getMoveInterval();
-    
+    int cmi = ene->getMoveInterval();
     // slow it by half
-    ene->setMoveIntervalScale(currentMoveInterval * 2, 3000);
+    ene->setMoveIntervalScale(3 * cmi, 1000);
     
 }
 

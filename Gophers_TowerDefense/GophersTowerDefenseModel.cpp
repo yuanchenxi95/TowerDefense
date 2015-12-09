@@ -13,8 +13,12 @@ GophersTowerDefenseModel::GophersTowerDefenseModel() {
     towerManager = new TowerManager();
     
     
-    health = 10;
-    money = 9999;
+    health = 99;
+    money = 99999;
+    
+    buildTower(2, 2, TowerType::GUNTOWER);
+    buildTower(4, 4, TowerType::FREEZETOWER);
+    buildTower(5, 5, TowerType::EXPLOSIVETOWER);
     
 }
 
@@ -35,8 +39,14 @@ void GophersTowerDefenseModel::setGameState(GameState newState) {
 
 // tick the world
 void GophersTowerDefenseModel::tick() {
-    waveManager->tickAndMove();
+    int i = waveManager->tickAndMove();
     towerManager->tickAndAttack();
+    
+    health -= i;
+    
+    if (health <= 0) {
+        setGameState(GameState::GAMEMOVER);
+    }
 }
 
 // return the board, vector<vector<ITile *> *> *
@@ -63,6 +73,70 @@ int GophersTowerDefenseModel::getHealth() {
 // return the current money
 int GophersTowerDefenseModel::getMoney() {
     return money;
+}
+
+// build the tower, return ture if success
+bool GophersTowerDefenseModel::buildTower(int r, int c, TowerType towerType) {
+    
+    ITile * et1 = mapStructure->getTile(r, c);
+    
+    if (et1 == NULL) {
+        return false;
+    }
+    
+    Wave ** wp = waveManager->getWavePointer();
+    
+    if (et1->getTileType() == TileType::TOWERTILE) {
+        if (towerType == TowerType::EXPLOSIVETOWER) {
+            ExplosiveTower * e1 = new ExplosiveTower(r, c, wp);
+            
+            if ((money - e1->getCost()) < 0) {
+                return false;
+            }
+            
+            money -= e1->getCost();
+            
+            TowerTile * etc1 =dynamic_cast<TowerTile *>(et1);
+            
+            towerManager->addTower(e1, etc1);
+            
+        } else if (towerType == TowerType::GUNTOWER) {
+            GunTower * e1 = new GunTower(r, c, wp);
+            
+            if ((money - e1->getCost()) < 0) {
+                return false;
+            }
+            
+            
+            money -= e1->getCost();
+            
+            TowerTile * etc1 =dynamic_cast<TowerTile *>(et1);
+            
+            towerManager->addTower(e1, etc1);
+            
+            
+        } else if (towerType == TowerType::FREEZETOWER) {
+            FreezeTower * e1 = new FreezeTower(r, c, wp);
+            
+            if ((money - e1->getCost()) < 0) {
+                return false;
+            }
+            
+            money -= e1->getCost();
+            
+            TowerTile * etc1 =dynamic_cast<TowerTile *>(et1);
+            
+            towerManager->addTower(e1, etc1);
+        }
+        
+        
+        return true;
+    }
+    
+    else {
+        return false;
+    }
+    
 }
 
 

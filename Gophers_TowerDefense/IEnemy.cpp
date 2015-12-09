@@ -17,9 +17,11 @@ IEnemy::IEnemy(int tx, int ty)  {
     
     counter = new Counter(&moveInterval);
     
-    freezeCounter = new Counter(new int(0));
+    freezeCounter = new Counter(0);
     
     onBoard = false;
+    
+    isFreeze = false;
 }
 
 // delete allocated memory
@@ -41,7 +43,18 @@ void IEnemy::move(int tx, int ty) {
         
 //        std::cout << x << " " << y << std::endl;
         moveToThePoint(x, y, tx, ty);
-        counter->reset();
+        
+        if (isFreeze) {
+            counter->set(&moveIntervalScale);
+            counter->reset();
+        } else {
+            counter->set(&moveInterval);
+            counter->reset();
+        }
+        
+        if (freezeCounter->isCoolDown()) {
+            isFreeze = false;
+        }
     }
     
 }
@@ -80,16 +93,17 @@ void IEnemy::kill() {
 void IEnemy::setMoveIntervalScale(int scale, int ticks) {
     moveIntervalScale = scale;
     
+    isFreeze = true;
+    
+    freezeCounter = new Counter(&ticks);
+    freezeCounter->reset();
+    
     
 }
 
-// get the moveInterval, if it is in freeze stage, scale the move interval
+// get the moveInterval
 int IEnemy::getMoveInterval() {
-    if (freezeCounter->isCoolDown()) {
-        return moveInterval;
-    } else {
-        return moveIntervalScale * moveInterval;
-    }
+    return moveInterval;
 }
 
 // is this enemy on board
@@ -104,12 +118,15 @@ void IEnemy::setOnBoard(bool b) {
 
 // tick the counters of this enemy
 void IEnemy::tick() {
+    
     counter->tick();
     freezeCounter->tick();
+    
 }
 
 // is the enemy good to move
 bool IEnemy::goodToMove() {
+    
     return counter->isCoolDown();
 }
 

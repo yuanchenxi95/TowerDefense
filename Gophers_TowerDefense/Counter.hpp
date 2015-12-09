@@ -14,7 +14,7 @@
 
 class Counter {
 public:
-    Counter(int *);
+    Counter(int*);
     ~Counter();
     
     // if counter > 0, sub 1 to the counter. otherwise, do nothing
@@ -24,10 +24,13 @@ public:
     void reset();
     
     // get the counter
-    int getCounter();
+    int* getCounter();
     
     // is it cool down
     bool isCoolDown();
+    
+    // set the coolDownToThe given int
+    void set(int*);
     
 private:
     int counter;

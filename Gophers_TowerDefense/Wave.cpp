@@ -13,7 +13,7 @@ Wave::Wave(EnemyPath * tep, vector<IEnemy *> * tloe) {
     loe = tloe;
     
     //spawn every minion in 100 milliseconds
-    spawnCounter = new Counter(new int(100));
+    spawnCounter = new Counter(new int(300));
     
     tileOfEnemy = new map<IEnemy*, EnemyTile*>();
     
@@ -26,6 +26,9 @@ Wave::Wave(EnemyPath * tep, vector<IEnemy *> * tloe) {
 
 Wave::~Wave() {
     // delete the counter
+    int * i = spawnCounter->getCounter();
+    i = NULL;
+    
     delete spawnCounter;
     spawnCounter = NULL;
     
@@ -68,7 +71,7 @@ bool Wave::anyEnemyToSpawn() {
 int Wave::move() {
     
     bool alreadySpawn = false;
-    
+    updateList();
     
     for (IEnemy * e : *loe) {
         

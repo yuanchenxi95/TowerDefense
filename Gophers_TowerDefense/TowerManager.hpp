@@ -13,6 +13,7 @@
 #include "GunTower.hpp"
 #include "FreezeTower.hpp"
 #include "ExplosiveTower.hpp"
+#include "TowerTile.hpp"
 #include <vector>
 
 class TowerManager {
@@ -25,6 +26,9 @@ public:
     
     // tick and attack
     void tickAndAttack();
+    
+    // add tower to the list
+    void addTower(ITower * t, TowerTile * tt);
     
     
 protected:

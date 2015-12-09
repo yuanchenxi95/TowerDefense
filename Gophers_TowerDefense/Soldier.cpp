@@ -13,8 +13,8 @@ Soldier::Soldier(int x, int y) : IEnemy(x, y) {
     
     moveInterval = 4;
     
-    health = 2000;
-    maxHealth = 2000;
+    health = 1000;
+    maxHealth = 1000;
     
 }
 

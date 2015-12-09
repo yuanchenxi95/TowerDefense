@@ -74,9 +74,13 @@ private:
     Counter * freezeCounter;
     
     // the scale of the move interval
-    int moveIntervalScale;
+    int moveIntervalScale = 1;
     
     bool onBoard;
+    
+    bool isFreeze;
+    
+    
 };
 
 #endif /* IEnemy_hpp */

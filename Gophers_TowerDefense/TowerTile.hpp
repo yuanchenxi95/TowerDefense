@@ -28,7 +28,7 @@ public:
     bool isOccupied();
     
     // build the tower
-    void buildTower(ITower & t);
+    void buildTower(ITower * t);
     
     
 protected:

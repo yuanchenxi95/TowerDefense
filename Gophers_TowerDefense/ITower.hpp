@@ -44,6 +44,9 @@ public:
     // get the range of this tower
     int getRange();
     
+    // get cost
+    int getCost();
+    
     // tick the counter
     void tick();
     
@@ -52,8 +55,11 @@ public:
     
 protected:
     // the pos of this tile
-    int x;
-    int y;
+    int posX;
+    int posY;
+    
+    int row;
+    int column;
     
     int range;
     int damage;

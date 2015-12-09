@@ -14,9 +14,9 @@ ExplosiveTower::ExplosiveTower(int x, int y, Wave ** w) : ITower(x, y, w) {
     // initilizes fields
     // deal 100 damage per attack, range is 100, delay is 3000 milliseconds.
     
-    damage = 20;
-    attackDelay = 1000;
-    range = 50;
+    damage = 50;
+    attackDelay = 150;
+    range = 100;
     cost = 100;
     
 

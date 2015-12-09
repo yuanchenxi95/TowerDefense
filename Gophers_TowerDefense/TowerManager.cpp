@@ -12,6 +12,7 @@
 TowerManager::TowerManager() {
     lot = new vector<ITower *>();
     
+    
 }
 
 
@@ -40,5 +41,19 @@ void TowerManager::tickAndAttack() {
         t->tick();
         t->attack();
     }
+}
+
+// add tower to the list
+void TowerManager::addTower(ITower * t, TowerTile * tt) {
+    if (tt->isOccupied()) {
+        return;
+    }
+    
+    lot->push_back(t);
+    
+    tt->buildTower(t);
+    
+    
+    
 }
 

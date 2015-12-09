@@ -11,11 +11,11 @@
 // constructor
 GunTower::GunTower(int x, int y, Wave * * w) : ITower(x, y, w) {
     // initilizes fields
-    // deal 100 damage per attack, range is 100, delay is 3000 milliseconds.
+    // deal 100 damage per attack, range is 100, delay is 100 milliseconds.
     
-    damage = 100;
-    attackDelay = 1000;
-    range = 180;
+    damage = 50;
+    attackDelay = 50;
+    range = 300;
     cost = 100;
     
     
