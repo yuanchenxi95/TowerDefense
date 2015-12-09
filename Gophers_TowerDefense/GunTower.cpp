@@ -9,7 +9,7 @@
 #include "GunTower.hpp"
 
 // constructor
-GunTower::GunTower(SDL_Point p) : ITower(p) {
+GunTower::GunTower(SDL_Point* p) : ITower(p) {
     // initilizes fields
     // deal 100 damage per attack, range is 100, delay is 3000 milliseconds.
     
@@ -29,4 +29,9 @@ void GunTower::attackHelp(vector<IEnemy*> * enemies) {
         (*enemies)[0]->takeDamage(damage);
     }
     
+}
+
+// get the tower type of this tower
+TowerType GunTower::getTowerType() {
+    return GUNTOWER;
 }

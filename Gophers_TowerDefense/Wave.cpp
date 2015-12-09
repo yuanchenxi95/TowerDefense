@@ -111,6 +111,12 @@ bool Wave::allEnemiesDead() {
     return loe->size() == 0;
 }
 
+
+// get the enemy list
+vector<IEnemy *> * Wave::getEnemies() {
+    return loe;
+}
+
 // remove the enemy in the list and hashmap, delete the enemy
 void Wave::removeEnemy(IEnemy * e, int i) {
     

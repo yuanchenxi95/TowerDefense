@@ -10,7 +10,7 @@
 
 // constructor
 // slow down enemy
-FreezeTower::FreezeTower(SDL_Point p) : ITower(p) {
+FreezeTower::FreezeTower(SDL_Point* p) : ITower(p) {
     // initilizes fields
     // deal 100 damage per attack, range is 100, delay is 3000 milliseconds.
     
@@ -37,4 +37,9 @@ void FreezeTower::freezeEnemy(IEnemy * ene) {
     // slow it by half
     ene->setMoveIntervalScale(currentMoveInterval * 2, 3000);
     
+}
+
+// get the tower type of this tower
+TowerType FreezeTower::getTowerType() {
+    return FREEZETOWER;
 }

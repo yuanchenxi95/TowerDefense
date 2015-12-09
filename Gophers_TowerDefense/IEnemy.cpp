@@ -11,7 +11,8 @@
 
 IEnemy::IEnemy(SDL_Point* p)  {
     
-    pos = p;
+    pos->x = p->x;
+    pos->y = p->y;
     
     counter = new Counter(&moveInterval);
     
@@ -102,7 +103,7 @@ bool IEnemy::goodToMove() {
     return counter->isCoolDown();
 }
 
-// move the first point to the second point. add 1 to the direction.
+// move the first point to the second point. add unit distance to the direction.
 // if on the same spot, don't move
 void IEnemy::moveToThePoint(SDL_Point* p1, SDL_Point* p2) {
     if (p2->x > p1->x) {

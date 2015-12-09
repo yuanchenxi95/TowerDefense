@@ -15,7 +15,11 @@
 class GunTower : public ITower {
 public:
     // constructor
-    GunTower(SDL_Point);
+    GunTower(SDL_Point*);
+    
+    // get the tower type of this tower
+    TowerType getTowerType();
+    
     
 protected:
     void attackHelp(vector<IEnemy*> *);

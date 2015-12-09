@@ -40,6 +40,9 @@ public:
     // are all the enemies dead
     bool allEnemiesDead();
     
+    // get the enemy list
+    vector<IEnemy *> * getEnemies();
+    
     
     
     

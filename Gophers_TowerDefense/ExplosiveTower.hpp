@@ -14,7 +14,10 @@
 
 class ExplosiveTower : ITower {
 public:
-    ExplosiveTower(SDL_Point);
+    ExplosiveTower(SDL_Point*);
+    
+    // get the tower type of this tower
+    TowerType getTowerType();
     
 protected:
     void attackHelp(vector<IEnemy*> *);

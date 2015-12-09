@@ -31,6 +31,8 @@ public:
     
     EnemyPath getEnemyPath();
     
+    vector<vector<ITile*>*> * getBoard();
+    
     
 private:
     

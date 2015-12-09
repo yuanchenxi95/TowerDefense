@@ -11,7 +11,7 @@
 
 #include <stdio.h>
 #include "SDL2/SDL.h"
-#include "IEnemy.hpp"
+#include "Wave.hpp"
 #include <iostream>
 #include <vector>
 #include <cmath>
@@ -22,15 +22,22 @@ using namespace std;
 // INVARIANT:
 // The position tower == the position of the tile contains this tower
 
+// Tower types
+enum TowerType {
+    GUNTOWER,
+    FREEZETOWER,
+    EXPLOSIVETOWER
+};
+
 class ITower {
 public:
-    ITower(SDL_Point);
+    ITower(SDL_Point*, Wave*);
     ~ITower();
     
     void attack(vector<IEnemy*> *); // fuction to begin attacking
     
     // get the position of this tower
-    SDL_Point getRowColumn();
+    SDL_Point* getPos();
     
     // get the range of this tower
     int getRange();
@@ -38,10 +45,12 @@ public:
     // tick the counter
     void tick();
     
+    virtual TowerType getTowerType() = 0;
+    
     
 protected:
-    // thw row and column of this tower
-    SDL_Point rowColumn;
+    // the pos of this tile
+    SDL_Point * pos;
     int range;
     int damage;
     int cost;
@@ -63,7 +72,12 @@ private:
     bool goodToAttack();
     
     // give two SDL_Points, calculate their distance
-    double calcDistance(SDL_Point, SDL_Point);
+    double calcDistance(SDL_Point*, SDL_Point*);
+    
+    vector<IEnemy *> * enemies;
+    
+    bool inRange(IEnemy *);
+    bool anyEnemyInRange();
 
 
     

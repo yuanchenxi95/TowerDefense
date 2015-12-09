@@ -34,22 +34,26 @@ MapStructure::~MapStructure() {
         delete lot;
     }
     
-    
+    // delete the board
     delete board;
     
     board = NULL;
     
+    // delete the list
     delete enemyPathList;
     
     enemyPathList = NULL;
     
     
+    // delete enemypath
     delete enemyPath;
-    
-    
+
     
 }
 
+vector<vector<ITile*>*> * MapStructure::getBoard() {
+    return board;
+}
 
 
 // allocate the space of the board.

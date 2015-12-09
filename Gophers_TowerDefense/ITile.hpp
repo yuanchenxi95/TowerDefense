@@ -32,7 +32,8 @@ public:
     // get the position of this tile
     SDL_Point* getPos();
     
-    static const int TILE_SIZE = 30;
+    // The size of this tile
+    static const int TILE_SIZE = 100;
     
     
     

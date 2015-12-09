@@ -17,7 +17,11 @@
 class FreezeTower : public ITower {
 public:
     // constructor
-    FreezeTower(SDL_Point);
+    FreezeTower(SDL_Point*);
+    
+    // get the tower type of this tower
+    TowerType getTowerType();
+    
 protected:
     void attackHelp(vector<IEnemy*> *);
     

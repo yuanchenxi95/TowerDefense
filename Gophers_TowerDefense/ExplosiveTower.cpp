@@ -10,7 +10,7 @@
 
 
 
-ExplosiveTower::ExplosiveTower(SDL_Point p) : ITower(p) {
+ExplosiveTower::ExplosiveTower(SDL_Point* p) : ITower(p) {
     // initilizes fields
     // deal 100 damage per attack, range is 100, delay is 3000 milliseconds.
     
@@ -32,4 +32,9 @@ void ExplosiveTower::attackHelp(vector<IEnemy*> * enemies) {
     
     
     
+}
+
+// get the tower type of this tower
+TowerType ExplosiveTower::getTowerType() {
+    return EXPLOSIVETOWER;
 }
