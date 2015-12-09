@@ -4,7 +4,7 @@
 /*
  * Interface for a tile, a smallest component of a board
  *
- * Should not be possible to instatiate, copy, or assign. 
+ * Should not be possible to instatiate, copy, or assign.
  * All member functions must be overridden by subclasses.
  */
 
@@ -12,9 +12,11 @@
 
 class ITile {
 public:
-  // destructor
-  virtual ~ITile() = 0;
-
+    
+    ITile(SDL_Point *);
+    // destructor
+    virtual ~ITile() = 0;
+    
     
     // static ITile* create(SDL_Point p);
     
@@ -25,9 +27,12 @@ public:
     virtual bool isEnemyTile() = 0;
     
     // get the position of this tile
-    virtual SDL_Point getRowColumn();
+    SDL_Point* getRowColumn();
     
+    // get the position of this tile
+    SDL_Point* getPos();
     
+    static const int TILE_SIZE = 30;
     
     
     
@@ -35,14 +40,17 @@ protected:
     bool towerTile;
     bool enemyTile;
     
+    // the row and column of this tile
+    SDL_Point * rowColumn;
+    
     // the position of this tile
-    SDL_Point rowColumn;
+    SDL_Point * pos;
     
     
 private:
-  ITile& operator=(const ITile & other);
+    ITile& operator=(const ITile & other);
     
-
+    
     
 };
 

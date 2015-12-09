@@ -27,7 +27,7 @@ private:
     void resetTheList();
     
     // list of enemy tile points
-    vector<SDL_Point> * loETP;
+    vector<SDL_Point*> * loETP;
     
 };
 

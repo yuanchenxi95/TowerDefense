@@ -16,7 +16,7 @@
 class TowerTile :public ITile {
 public:
     // initialize the EnemyTile with the given Point
-    TowerTile(SDL_Point p);
+    TowerTile(SDL_Point * p);
     
     // deconstructor
     ~TowerTile();

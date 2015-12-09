@@ -10,8 +10,7 @@
 
 
 // initialize the EnemyTile with the given Point
-TowerTile::TowerTile(SDL_Point p) {
-    rowColumn = p;
+TowerTile::TowerTile(SDL_Point * p) : ITile(p) {
     towerTile = true;
     enemyTile = false;
     occupied = false;

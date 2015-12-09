@@ -9,7 +9,7 @@
 #include "MapGenerator.hpp"
 
 MapGenerator::MapGenerator() {
-    loETP = new vector<SDL_Point>;
+    loETP = new vector<SDL_Point*>;
 }
 
 MapGenerator::~MapGenerator() {
@@ -100,9 +100,9 @@ MapStructure MapGenerator::getMapOne() {
 }
 
 void MapGenerator::putETP(int x, int y) {
-    SDL_Point p;
-    p.x = x;
-    p.y = y;
+    SDL_Point * p;
+    p->x = x;
+    p->y = y;
     loETP->push_back(p);
 }
 
@@ -110,7 +110,7 @@ void MapGenerator::putETP(int x, int y) {
 void MapGenerator::resetTheList() {
     delete loETP;
     
-    loETP = new vector<SDL_Point>;
+    loETP = new vector<SDL_Point*>;
     
 }
 

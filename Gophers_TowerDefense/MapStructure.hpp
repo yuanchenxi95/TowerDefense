@@ -25,7 +25,7 @@ using namespace std;
 
 class MapStructure {
 public:
-    MapStructure(vector<SDL_Point> * epl, int cl, int ro);
+    MapStructure(vector<SDL_Point*> * epl, int cl, int ro);
     ~MapStructure();
     
     
@@ -45,7 +45,7 @@ private:
     
     vector<vector<ITile*> *> * board;
     
-    vector<SDL_Point> * enemyPathList;
+    vector<SDL_Point*> * enemyPathList;
     
     EnemyPath * enemyPath;
     

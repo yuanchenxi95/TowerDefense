@@ -9,11 +9,9 @@
 #include "IEnemy.hpp"
 
 
-IEnemy::IEnemy(SDL_Point p, SDL_Point rc)  {
+IEnemy::IEnemy(SDL_Point* p)  {
     
     pos = p;
-    
-    rowColumn = rc;
     
     counter = new Counter(&moveInterval);
     
@@ -33,7 +31,7 @@ IEnemy::~IEnemy() {
 }
 
 // move the enemy to the given position
-void IEnemy::move(SDL_Point p) {
+void IEnemy::move(SDL_Point *p) {
   
     // check whether it satisfies the requirement of moving
     if (goodToMove()) {
@@ -43,24 +41,13 @@ void IEnemy::move(SDL_Point p) {
 }
 
 // set the rowColumn to the given point
-void setRowColumn(SDL_Point *) {
-    
-}
-
-
-// set the rowColumn to the given point
-void setPosition(SDL_Point *) {
-    
+void IEnemy::setPosition(SDL_Point* p) {
+    pos = p;
 }
 
 // get the position of enemy
-SDL_Point IEnemy::getPos() {
+SDL_Point* IEnemy::getPos() {
     return pos;
-}
-
-// get the row and column of this tile
-SDL_Point IEnemy::getRowColumn() {
-    return rowColumn;
 }
 
 // reduce Enemy's health by the given damage
@@ -71,6 +58,11 @@ void IEnemy::takeDamage(int damage) {
 // return true if the health is <= 0
 bool IEnemy::isDead() {
     return health <= 0;
+}
+
+// kill this enemy
+void IEnemy::kill() {
+    health = 0;
 }
 
 // set the moveInterval
@@ -99,6 +91,12 @@ void IEnemy::setOnBoard(bool b) {
     onBoard = b;
 }
 
+// tick the counters of this enemy
+void IEnemy::tick() {
+    counter->tick();
+    freezeCounter->tick();
+}
+
 // is the enemy good to move
 bool IEnemy::goodToMove() {
     return counter->isCoolDown();
@@ -106,21 +104,21 @@ bool IEnemy::goodToMove() {
 
 // move the first point to the second point. add 1 to the direction.
 // if on the same spot, don't move
-void IEnemy::moveToThePoint(SDL_Point p1, SDL_Point p2) {
-    if (p2.x > p1.x) {
-        p1.x += 1;
+void IEnemy::moveToThePoint(SDL_Point* p1, SDL_Point* p2) {
+    if (p2->x > p1->x) {
+        p1->x += 1;
     }
     
-    if (p2.x < p1.x) {
-        p1.x -= 1;
+    if (p2->x < p1->x) {
+        p1->x -= 1;
     }
     
-    if (p2.y > p1.y) {
-        p1.y += 1;
+    if (p2->y > p1->y) {
+        p1->y += 1;
     }
     
-    if (p2.y < p1.y) {
-        p1.y -= 1;
+    if (p2->y < p1->y) {
+        p1->y -= 1;
     }
 }
 

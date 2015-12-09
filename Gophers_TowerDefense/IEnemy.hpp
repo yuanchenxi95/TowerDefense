@@ -19,18 +19,17 @@
 class IEnemy {
 public:
     
-    IEnemy(SDL_Point, SDL_Point); // constructor
+    IEnemy(SDL_Point*); // constructor
     ~IEnemy(); // deconstructor
     
-    void move(SDL_Point); // move the enemy to the given position
-    void setRowColumn(SDL_Point *); // set the rowColumn to the given point
-    void setPosition(SDL_Point *); // set the pos to the given position
+    void move(SDL_Point*); // move the enemy to the given position
+    void setPosition(SDL_Point*); // set the pos to the given position
     
-    SDL_Point getPos(); // return the position of the enemy
-    SDL_Point getRowColumn(); // return the row and column of this
+    SDL_Point * getPos(); // return the position of the enemy
     
     void takeDamage(int); // take x amount of damage from an ITower
     bool isDead(); // return true if health is <= 0, false otherwise
+    void kill(); // kill this enemy
     
     void setMoveIntervalScale(int, int); // set the move Interval for how many ticks
     int getMoveInterval(); // get the move Interval
@@ -38,9 +37,11 @@ public:
     bool isOnBoard(); // is this enemy on board
     void setOnBoard(bool); // set the onBoard to the given boolean
     
+    void tick();// tick this enemy's counters
+
+    
 protected:
-    SDL_Point pos; // the position of the enemy
-    SDL_Point rowColumn; // the row and column of this enemy
+    SDL_Point * pos; // the position of the enemy
 
     int moveInterval; // move every __ milliseconds
     
@@ -53,7 +54,7 @@ protected:
     
 private:
     // move the first point to the second point. add 1 to the direction.
-    void moveToThePoint(SDL_Point, SDL_Point);
+    void moveToThePoint(SDL_Point*, SDL_Point*);
     
     
     Counter * counter;

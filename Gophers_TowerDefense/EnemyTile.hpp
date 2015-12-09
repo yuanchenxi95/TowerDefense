@@ -15,7 +15,7 @@
 class EnemyTile :public ITile {
 public:
     // initialize the EnemyTile with the given Point
-    EnemyTile(SDL_Point p);
+    EnemyTile(SDL_Point * p);
     
     // deconstructor
     ~EnemyTile();

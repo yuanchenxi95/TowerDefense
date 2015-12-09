@@ -10,7 +10,7 @@
 
 
 
-MapStructure::MapStructure(vector<SDL_Point> * epl, int cl, int ro) {
+MapStructure::MapStructure(vector<SDL_Point*> * epl, int cl, int ro) {
     
     
     row = ro;
@@ -67,16 +67,16 @@ void MapStructure::setUpEnemyPath() {
     
     vector<EnemyTile*> * loET = new vector<EnemyTile*>(enemyPathList->size());
     
-    for (SDL_Point p: *enemyPathList) {
+    for (SDL_Point * p: *enemyPathList) {
         // check enemyPathList
-        if (p.y >= row && p.y < 0 && p.x >= column && p.x < 0) {
+        if (p->y >= row && p->y < 0 && p->x >= column && p->x < 0) {
             cerr << " Illegal coordinate for Enemy Tower" << endl;
         }
         
         EnemyTile * et = new EnemyTile(p);
         
         // change the correspond TowerTile to EnemyTile
-        (*(*board)[p.x])[p.y] = et;
+        (*(*board)[p->x])[p->y] = et;
         
         loET->push_back(et);
     }
@@ -96,9 +96,9 @@ void MapStructure::setUpTowerTiles() {
             // if this space does not have a tile, build a tower tile
             if ((*(*board)[i])[j] == NULL) {
                 
-                SDL_Point p;
-                p.x = i;
-                p.y = j;
+                SDL_Point * p;
+                p->x = i;
+                p->y = j;
                 
                 //board->at(i)->push_back(new TowerTile(p));
                 (*(*board)[i])[j] = new TowerTile(p);
