@@ -27,9 +27,9 @@ private:
   ITowerDefenseModel * tdModel;
   
   int WINDOW_WIDTH = 1200;           // changable window width
-  int WINDOW_HEIGHT = 650;           // changable window height
+  int WINDOW_HEIGHT = 600;           // changable window height
   
-  int cellSize = 100;
+  int cellSize = 60;
   
   // window renderer
   SDL_Renderer * renderer = NULL;

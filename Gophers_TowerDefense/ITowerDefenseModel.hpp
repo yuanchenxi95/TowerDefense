@@ -45,8 +45,10 @@ public:
     
     // return the current money
     virtual int getMoney() = 0;
-    
-    
+  
+    // tick the world
+    virtual void tick() = 0;
+  
 private:
     ITowerDefenseModel& operator=(const ITowerDefenseModel & other);
     

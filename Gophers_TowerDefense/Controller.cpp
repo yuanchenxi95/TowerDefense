@@ -28,9 +28,18 @@ void Controller::handleKey(SDL_Keycode keycode) {
 }
 
 // game loop
+unsigned int lastTime = 0, currentTime;
+
 void Controller::startLoop() {
   // Main loop
   while (tdModel->getGameState() != QUIT) {
+    
+    currentTime = SDL_GetTicks();
+    if (currentTime > lastTime + 300) {
+      tdModel->tick();
+      tdView->render();
+      lastTime = currentTime;
+    }
     
     // 1. Finish responding to all events within event queue
     while (SDL_PollEvent(&eventHandler) != 0) {
@@ -46,6 +55,6 @@ void Controller::startLoop() {
       }
     }
     
-    tdView->render();
+    
   }
 }

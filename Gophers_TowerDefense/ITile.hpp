@@ -38,7 +38,7 @@ public:
     virtual TileType getTileType() = 0;
     
     // The size of this tile
-    static const int TILE_SIZE = 100;
+    static const int TILE_SIZE = 60;
     
     
     

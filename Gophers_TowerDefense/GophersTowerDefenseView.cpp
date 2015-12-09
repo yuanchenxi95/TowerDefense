@@ -7,31 +7,9 @@
 GophersTowerDefenseView::GophersTowerDefenseView(ITowerDefenseModel & model) {
   tdModel = &model;
   
-//  SDL_Point p = {0, 0};
-//  std::vector<ITile *> v1(15, new EnemyTile(p));
-//  std::vector<std::vector<ITile *>> board(10, v1);
-//  
-//  for(int i = 0; i < 15; i++) {
-//    for(int j = 0; j < 10; j++) {
-//      SDL_Point p = {i, j};
-//      board[i][j] = new EnemyTile(p);
-//    }
-//  }
-//  
-//  std::cout << board[0].size() << std::endl; // 15
-//  std::cout << board.size() << std::endl;    // 10
+  WINDOW_WIDTH = 60 * 15;
+  WINDOW_HEIGHT = 60 * 10;
   
-//  for(int i = 0; i < 15; i++) {
-//    for(int j = 0; j < 10; j++) {
-//      std::cout << board[i][j]->getRowColumn()->x << board[i][j]->getRowColumn()->y << std::endl;
-//    }
-//  }
-//  
-//
-//  std::cout << tdModel->getBoard()[0][5] << std::endl;
-//  std::cout << tdModel->getBoard()->size() << std::endl;
-//  WINDOW_WIDTH = 20 * cellSize;
-//  WINDOW_HEIGHT = 10 * cellSize;
   if(!init()) {
     std::cout << "SDL init failed somewhere!" << std::endl;
   } else {
@@ -94,54 +72,41 @@ void GophersTowerDefenseView::render() {
   //  SDL_FillRect(windowSurface, 0, SDL_MapRGB(windowSurface->format, 0, 0, 0));
   
   // Render to screen
-  std::vector<std::vector<ITile *> *>::const_iterator row;
-  std::vector<ITile *>::const_iterator col;
-  
-  std::vector<std::vector<ITile *> *> * board = tdModel->getBoard();
-
-  // 112, 173, 71
-  
-  // Testing drawing
-//  for (int row = 0; row < 10; ++row) {
-//    for (int col = 0; col < 20; ++ col) {
-//      SDL_Rect outlineRect =
-//      // y is column number, x is row number
-//      {col * cellSize, row * cellSize, cellSize, cellSize};
-//      
-//      SDL_SetRenderDrawColor(renderer, 217, 217, 217, 0x00);
-//      SDL_RenderFillRect(renderer, &outlineRect);
-//      
-//      SDL_SetRenderDrawColor(renderer, 255, 255, 255, 0x00);
-//      SDL_RenderDrawRect(renderer, &outlineRect);
-//    }
-//  }
-  
-  for (vector<ITile *> * row : *board) {
-    for (ITile * tile : * row) {
-      SDL_Point * curRowCol = tile->getRowColumn();
-      SDL_Rect outlineRect =
-      // y is column number, x is row number
-      {curRowCol->y * cellSize, curRowCol->x * cellSize, cellSize, cellSize};
-            SDL_SetRenderDrawColor(renderer, 217, 217, 217, 0x00);
-
-      SDL_RenderDrawRect(renderer, &outlineRect);
+  for (ITile * tile : *tdModel->getBoard()) {
+    SDL_Rect outlineRect =
+    // y is column number, x is row number
+    {tile->getRow() * cellSize, tile->getColumn() * cellSize, cellSize, cellSize};
+//    std::cout << tile->getColumn() << std::endl;
+    switch (tile->getTileType()) {
+      case ENEMYTILE:
+        SDL_SetRenderDrawColor(renderer, 112, 173, 71, 0x00);
+        break;
+      case TOWERTILE:
+        SDL_SetRenderDrawColor(renderer, 217, 217, 217, 0x00);
+        break;
     }
+    SDL_RenderFillRect(renderer, &outlineRect);
+    
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 0x00);
+    SDL_RenderDrawRect(renderer, &outlineRect);
   }
   
-//  SDL_Point curRowCol = {0, 0};
-//  SDL_Rect outlineRect =
-//  {curRowCol.x * cellSize, curRowCol.y * cellSize, cellSize, cellSize};
-//  SDL_SetRenderDrawColor(renderer, 0x00, 0xFF, 0x00, 0xFF);
-//  SDL_RenderDrawRect(renderer, &outlineRect);
-  
-//  for (int i = 0; i < 10; ++i) {
-//    SDL_Rect rendersize;
-//    rendersize.x = i * cellSize;
-//    rendersize.y = i * cellSize + currentpos;
-//    rendersize.w = 30;
-//    rendersize.h = 30;
-//    SDL_RenderCopy(renderer, texture_turtleNormal, NULL, &rendersize);
-//  }
+  for (IEnemy * e : *(tdModel->getEnemies())) {
+    SDL_Rect rect =
+    // y is column number, x is row number
+    {e->getX() * cellSize, e->getY() * cellSize, cellSize, cellSize};
+    switch (e->getEnemyType()) {
+      case SOLDIER:
+        SDL_RenderCopy(renderer, texture_turtleNormal, NULL, &rect);
+        break;
+      case TANK:
+        SDL_RenderCopy(renderer, texture_turtleTank, NULL, &rect);
+        break;
+      case RUSH:
+        SDL_RenderCopy(renderer, texture_turtleFast, NULL, &rect);
+        break;
+    }
+  }
   
   // Update
   SDL_RenderPresent(renderer);
