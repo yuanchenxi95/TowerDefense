@@ -22,6 +22,8 @@ MapStructure::MapStructure(vector<SDL_Point*> * epl, int ro, int cl) {
     
     board = new vector<ITile *>();
     
+    
+    // initialize the board
     for (int i = 0; i < row; i ++) {
         for (int j = 0; j < column; j++) {
             
@@ -34,6 +36,19 @@ MapStructure::MapStructure(vector<SDL_Point*> * epl, int ro, int cl) {
         }
     }
     
+    for (ITile * t : *
+         board) {
+        cout << t->getRow() << " " << t->getColumn() << endl;
+    }
+
+    // initialize the path
+    for (SDL_Point *p : *enemyPathList) {
+        
+        loET->push_back(new EnemyTile(p->x, p->y));
+        
+    }
+    
+    enemyPath = new EnemyPath(loET);
     
 }
 
@@ -61,6 +76,15 @@ MapStructure::~MapStructure() {
     
     // delete enemypath
     delete enemyPath;
+    
+    // delete list of enemyTile
+    for (EnemyTile * t : *loET) {
+        delete t;
+        t = NULL;
+    }
+    
+    delete loET;
+    loET = NULL;
     
     
 }
